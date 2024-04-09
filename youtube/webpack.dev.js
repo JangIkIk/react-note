@@ -3,14 +3,18 @@ const path = require('path');
 // HTML 파일을 생성하는 플러그인
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
     // webpack에 내장된 최적화기능 모드에 따라 각환경에대해 최적화
     mode: "development",
     // webpack의 번들링 프로세스를 시작할 시작점
     entry: path.resolve(__dirname,'./src/index.tsx'),
     // 개발시 사용하는 서버
+    // 컴파일후 파일을 출력하지 않는다. 번들파일을 메모리에 보관하고 실제 파일인 것처럼 제공함
+    // 
     devServer: {
+        // static:{
+        //     directory: path.join(__dirname, "public","index.html")
+        // },
         // 서버가 시작된 후 브라우저를 열도록
         open: true,
         // 변경된 사항만 갱신
@@ -40,6 +44,10 @@ module.exports = {
         // 번들링과 관련
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      }
     ],
   },
   // 모듈을 해석하는 방식을 결정함
@@ -52,7 +60,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "public/index.html"
-        })
+        }),
     ]
 
 }
