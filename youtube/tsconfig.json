@@ -1,0 +1,27 @@
+{
+  // TypeScript 컴파일러의 옵션을 지정하는 속성
+  "compilerOptions": {
+    // ECMAScript 버전 설정
+    "target": "es5",
+    // 모듈 시스템 설정
+    "module": "commonjs",
+    // 생성될 JSX 코드 설정
+    "jsx": "react-jsx", // js파일로 컴파일 되며, JSX코드는 _jsx()함수의 호출로 변환
+    //  .ts | .tsx 파일을 import할수 있도록
+    "allowImportingTsExtensions":true,
+    // js파일을 생성하지 않음
+    "noEmit": true,
+    // CommonJS와 ESM 모듈간의 상호 윤용성을 위함
+    "esModuleInterop": true,
+    // 파일의 이름을 대소문자를 판별
+    "forceConsistentCasingInFileNames": true,
+    // 모든 타입에 대해서 엄격한 체크
+    "strict": true,
+    // 선언한파일들(라이브러리) 의 타입 체크를 생략하도록
+    "skipLibCheck": true
+  },
+  // 컴파일할 파일들을 지정하는 속성
+  // "include": ["src/**/*.ts", "src/**/*.tsx"],
+  // 컴파일 대상에서 제외할 파일들을 지정하는 속성
+  // "exclude": ["node_modules"]
+}
