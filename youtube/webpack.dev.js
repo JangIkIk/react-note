@@ -3,6 +3,8 @@ const path = require('path');
 // HTML 파일을 생성하는 플러그인
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+console.log("경로테스트",path.resolve(__dirname, "public/assets"));
+
 module.exports = {
     // webpack에 내장된 최적화기능 모드에 따라 각환경에대해 최적화
     mode: "development",
@@ -10,11 +12,13 @@ module.exports = {
     entry: path.resolve(__dirname,'./src/index.tsx'),
     // 개발시 사용하는 서버
     // 컴파일후 파일을 출력하지 않는다. 번들파일을 메모리에 보관하고 실제 파일인 것처럼 제공함
-    // 
     devServer: {
-        // static:{
-        //     directory: path.join(__dirname, "public","index.html")
-        // },
+        static:{
+          // 정적파일이 있는 경로를 지정
+          directory: path.resolve(__dirname, "public/assets"),
+          // 서버에서 제공할 정적 파일경로
+          publicPath: "/assets"
+        },
         // 서버가 시작된 후 브라우저를 열도록
         open: true,
         // 변경된 사항만 갱신
@@ -46,6 +50,8 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        // css-loader: css파일을 읽기위함
+        // style-loader: js에서 생성되는 동적 스타일을 적용
         use: ["style-loader", "css-loader"],
       }
     ],
@@ -54,6 +60,10 @@ module.exports = {
     resolve:{
       //확장자 순서대로 해석하며, 배열의 앞에서부터 해석하고 남은것은 해석하지 않음
         // extensions:[".js", ".ts", ".jsx", ".tsx", ".css"]
+        alias:{
+          "@css": path.resolve(__dirname, "src/css/"),
+          "@components": path.resolve(__dirname, "src/components/"),
+        },
     },
     // 불러온 플러그인을 적용
     // https://webpack.kr/plugins/#root
@@ -61,6 +71,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "public/index.html"
         }),
+
     ]
 
 }

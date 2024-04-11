@@ -18,7 +18,14 @@
     // 모든 타입에 대해서 엄격한 체크
     "strict": true,
     // 선언한파일들(라이브러리) 의 타입 체크를 생략하도록
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    // 모듈이 기본적으로 위치한 디렉토리 설정
+    // "baseUrl": "./",
+    // // baseurl을 기준으로 절대경로를 지정함
+    // "paths": {
+    //   "@css/*": ["src/css/*"],
+    // }
   },
   // 컴파일할 파일들을 지정하는 속성
   // "include": ["src/**/*.ts", "src/**/*.tsx"],
