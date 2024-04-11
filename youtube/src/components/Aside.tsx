@@ -29,7 +29,7 @@ function Aside(){
 
     return(
         <div className="aside">
-            {buttonData && buttonData.map((value, idx)=> <div className="aside_item"><AsideButton key={idx} buttonInfo={value}/></div>)}
+            {buttonData && buttonData.map((value, idx)=> <div key={idx} className="aside_item"><AsideButton buttonInfo={value}/></div>)}
         </div>
     );
 };
