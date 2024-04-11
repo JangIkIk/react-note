@@ -5,6 +5,7 @@
 
   --text-col-white: #f1f1f1;
   --text-col-black: #212121;
+  --text-col-gray: #AAAAAA;
 
   --bg-dark: #000000;
   --bg-light-dark: #7b7b7b;
@@ -42,5 +43,4 @@
 }
 .main-layout {
   grid-area: main;
-  background-color: yellow;
 }
