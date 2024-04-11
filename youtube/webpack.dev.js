@@ -3,7 +3,7 @@ const path = require('path');
 // HTML 파일을 생성하는 플러그인
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-console.log("경로테스트",path.resolve(__dirname, "public/assets"));
+// console.log("경로테스트",path.resolve(__dirname, "public/video"));
 
 module.exports = {
     // webpack에 내장된 최적화기능 모드에 따라 각환경에대해 최적화
@@ -13,12 +13,20 @@ module.exports = {
     // 개발시 사용하는 서버
     // 컴파일후 파일을 출력하지 않는다. 번들파일을 메모리에 보관하고 실제 파일인 것처럼 제공함
     devServer: {
-        static:{
-          // 정적파일이 있는 경로를 지정
-          directory: path.resolve(__dirname, "public/assets"),
-          // 서버에서 제공할 정적 파일경로
-          publicPath: "/assets"
-        },
+        static:[
+          {
+            // 정적파일이 있는 경로를 지정
+            directory: path.resolve(__dirname, "public/assets"),
+            // 서버에서 제공할 정적 파일경로
+            publicPath: "/assets"
+          },
+          {
+            // 정적파일이 있는 경로를 지정
+            directory: path.resolve(__dirname, "public/video"),
+            // 서버에서 제공할 정적 파일경로
+            publicPath: "/video"
+          },
+        ],
         // 서버가 시작된 후 브라우저를 열도록
         open: true,
         // 변경된 사항만 갱신
