@@ -28,10 +28,17 @@
 
 .header-layout {
   grid-area: header;
+  position: fixed;
+  height: 56px;
+  left: 0;
+  right: 0;
 }
 .aside-layout {
   grid-area: aside;
-  background-color: blue;
+  position: fixed;
+  width: 72px;
+  top: 56px;
+  bottom: 0;
 }
 .main-layout {
   grid-area: main;
