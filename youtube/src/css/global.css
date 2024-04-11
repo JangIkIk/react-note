@@ -1,0 +1,39 @@
+:root {
+  --text-small: 12px;
+  --text-medium: 16px;
+  --text-large: 20px;
+
+  --text-col-white: #f1f1f1;
+  --text-col-black: #212121;
+
+  --bg-dark: #000000;
+  --bg-light-dark: #7b7b7b;
+}
+
+#root {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 56px;
+  grid-template-columns: 72px;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "aside main main"
+    "aside main main";
+}
+
+.header-layout {
+  grid-area: header;
+}
+.aside-layout {
+  grid-area: aside;
+  background-color: blue;
+}
+.main-layout {
+  grid-area: main;
+  background-color: yellow;
+}
