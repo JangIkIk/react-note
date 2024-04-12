@@ -1,0 +1,70 @@
+.user-channel {
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-col-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-channel__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-channel__banner {
+  background-image: url("https://yt3.googleusercontent.com/lhGZkOWfel8lH3qBQhm-lHWWfDCyae-ZbhLQHKZBEclP0rBLqYXiO9BwzHnhuGcKuPDYk2ZgdgM=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.user-channel__info{
+    display: flex;
+    gap: 20px;
+}
+
+.user-channel__img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.user-channel__content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-channel__content__title{
+
+}
+
+.user-channel__content__view{
+  color: var(--text-col-gray);
+}
+
+.user-chaanel__content__more{
+  color: var(--text-col-gray);
+}
+
+.user-channel__content__subscribe{
+  width: 70px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.user-channel__line{
+  border: 1px solid gray;
+  width: 100%;
+}
+
+.user-channel__tap{
+  padding-top: 20px;
+  background-color: red;
+}
