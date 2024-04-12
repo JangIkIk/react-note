@@ -15,7 +15,7 @@ interface ItemData {
   accountName: string;
 }
 
-function ItemList(props: {itemInfo: ItemData}) {
+function HomeList(props: {itemInfo: ItemData}) {
   const {
     videoImgUrl,
     videoUrl,
@@ -58,4 +58,4 @@ function ItemList(props: {itemInfo: ItemData}) {
   );
 }
 
-export default ItemList;
+export default HomeList;
