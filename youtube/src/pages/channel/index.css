@@ -1,0 +1,81 @@
+.user-channel {
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-col-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-channel__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-channel__banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.user-channel__info {
+  display: flex;
+  gap: 20px;
+}
+
+.user-channel__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.user-channel__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-channel__content__title {
+}
+
+.user-channel__content__view {
+  color: var(--text-col-gray);
+}
+
+.user-chaanel__content__more {
+  color: var(--text-col-gray);
+}
+
+.user-channel__content__subscribe {
+  width: 70px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.user-channel__tap-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.user-channel__tap-buttons-btn {
+  padding: 10px;
+  color: var(--text-col-white);
+}
+
+.user-channel__tap-buttons-btn--line {
+  border-bottom: 2px solid white;
+}
+
+.user-channel__tap-line {
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.user-channel__tap-screen {
+  padding-top: 60px;
+}

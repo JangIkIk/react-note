@@ -1,13 +1,8 @@
 import React from "react";
-import "@css/aside.css";
+import "../index.css";
+import {MenuData} from "../AsideContainer.tsx";
 
-interface ButtonData{
-    iconType: string;
-    iconText: string;
-    router: string;
-};
-
-function AsideButton (props: { buttonInfo: ButtonData}){
+function AsideButton (props: { buttonInfo: MenuData}){
     const {iconType, iconText} = props.buttonInfo;
     return(
         <>

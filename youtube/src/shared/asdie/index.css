@@ -16,8 +16,16 @@
   flex-direction: column;
   border-radius: 10px;
   gap: 5px;
+  color: var(--text-col-white);
+}
+
+.aside_item--active{
+  background-color: var(--bg-light-dark);
 }
 
 .aside_item:hover{
     background-color: var(--bg-light-dark);
 }
+
+
+

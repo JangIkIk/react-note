@@ -1,9 +1,12 @@
 import React from "react";
-import "@css/home.css";
-import {dateCalc} from "../utility/index.ts";
+import "../index.css";
+import {dateCalc} from "../../../utility/index.ts";
+import {Link} from "react-router-dom";
 
-
+// 파일 분류
+// 페이지로 나눌경우 종속성이 없도록
 interface ItemData {
+  id:number;
   videoImgUrl: string;
   videoUrl: string;
   videoName: string;
@@ -17,6 +20,7 @@ interface ItemData {
 
 function HomeList(props: {itemInfo: ItemData}) {
   const {
+    id,
     videoImgUrl,
     videoUrl,
     videoName,
@@ -27,6 +31,7 @@ function HomeList(props: {itemInfo: ItemData}) {
     accountUrl,
     accountName,
   } = props.itemInfo;
+  
   return (
     <div className="home-list__item">
         <div className="home-list__thumbnail">
@@ -39,9 +44,9 @@ function HomeList(props: {itemInfo: ItemData}) {
         <div className="home-list__info">
 
           <div className="home-list__account">
-            <a href={accountUrl}>
+            <Link to={`/${id}`}>
               <img className="home-list__account-img" src={accountImgUrl}/>
-            </a>
+            </Link>
           </div>
 
           <div className="home-list__text">

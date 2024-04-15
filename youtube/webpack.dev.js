@@ -3,13 +3,19 @@ const path = require('path');
 // HTML 파일을 생성하는 플러그인
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// console.log("경로테스트",path.resolve(__dirname, "public/video"));
+console.log("경로테스트",path.resolve(__dirname, "dist"));
 
 module.exports = {
     // webpack에 내장된 최적화기능 모드에 따라 각환경에대해 최적화
     mode: "development",
+    // devtool: "eval-cheap-source-map",
     // webpack의 번들링 프로세스를 시작할 시작점
-    entry: path.resolve(__dirname,'./src/index.tsx'),
+    entry: path.resolve(__dirname,'./src/app/index.tsx'),
+    output:{
+      // path: path.resolve(__dirname, "dist"),
+      // filename: "bundle.js",
+      publicPath: '/'
+    },
     // 개발시 사용하는 서버
     // 컴파일후 파일을 출력하지 않는다. 번들파일을 메모리에 보관하고 실제 파일인 것처럼 제공함
     devServer: {
@@ -28,7 +34,7 @@ module.exports = {
           },
         ],
         // 서버가 시작된 후 브라우저를 열도록
-        open: true,
+        // open: true,
         // 변경된 사항만 갱신
         hot: true,
         // 서버가 열링 port
@@ -37,7 +43,9 @@ module.exports = {
         // 해당 옵션을 적용하려면 hot을 비활성화 하거나, watchFiles를 활성화
         // https://webpack.kr/configuration/dev-server/#devserverwatchfiles
         // watchFiles: ["src/**/*.index.tsx"]
-        // liveReload: false,
+        liveReload: false,
+        // SPA 옵션으로서 새로고치음을 하지않고, 새로운 컨텐츠를 동적으로 렌더링하기 위함
+        historyApiFallback: true,
     },
     // 다른 유형의 모듈을 처리하는 방법을 결정함
     module: {
@@ -69,8 +77,8 @@ module.exports = {
       //확장자 순서대로 해석하며, 배열의 앞에서부터 해석하고 남은것은 해석하지 않음
         // extensions:[".js", ".ts", ".jsx", ".tsx", ".css"]
         alias:{
-          "@css": path.resolve(__dirname, "src/css/"),
-          "@components": path.resolve(__dirname, "src/components/"),
+          // "@css": path.resolve(__dirname, "src/css/"),
+          // "@components": path.resolve(__dirname, "src/components/"),
         },
     },
     // 불러온 플러그인을 적용
