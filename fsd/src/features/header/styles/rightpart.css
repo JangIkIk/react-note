@@ -1,0 +1,5 @@
+.rightpart{
+    flex-basis: 225px;
+    display: flex;
+    justify-content: flex-end;
+}
