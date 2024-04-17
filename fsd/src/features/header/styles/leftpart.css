@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    outline: 1px solid red;
 }
 
 .leftpart-menu{
@@ -27,6 +26,6 @@
     font-weight: 600;
 }
 .leftpart-logo__language{
-    color: var(--mode-dark-effect);
+    color: #AAAAAA;
     font-size: var(--text-sm);
 }
