@@ -12,6 +12,7 @@
 }
 
 .iconbtn-img{
+    width: 24px;
     filter: var(--mode-dark-invert);
 }
 .iconbtn-text{
