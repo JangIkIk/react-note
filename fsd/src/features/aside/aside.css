@@ -1,0 +1,12 @@
+.aside{
+    position: fixed;
+    width: 75px;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--mode-dark-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
