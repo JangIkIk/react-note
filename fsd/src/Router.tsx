@@ -1,12 +1,32 @@
 import React from "react";
-import {Routes, Route} from "react-router";
+import {Routes, Route,Outlet} from "react-router";
 import Home from "./pages/Home";
+import BaseLayout from "components/baseLayout/BaseLayout";
+
+const Layout = ()=>{
+    return(
+        <BaseLayout>
+            <Outlet/>
+        </BaseLayout>
+    );
+}
+
+/*
+    해당 방식처럼 레이아웃을 잡는 컴포넌트를 만든후 라우터안에서
+    정의 해주면 또다른 Aside의 사이즈가 달라져도 다른곳으로 묶어줄수가 있다.
+    단 한간지 의문점은? 레이아웃이 바뀔일이 별로 없다는것..
+    그경우에는 해당 페이지에서 컴포넌트별 Route만 정의해주고
+    App.tsx에서 BaseLayout 컴포넌트로 Roter.tsx를 감싸주면 끝
+    즉, Layout컴포넌트를 추가하면 삭제,추가 하기가 간단하다.
+*/ 
 
 const Router = ()=>{
     return(
         <>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route element={<Layout/>}>
+                    <Route path="/" element={<Home/>}/>
+                </Route>
             </Routes>
         </>
     );
