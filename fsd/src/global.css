@@ -9,3 +9,11 @@
     --text-lg: 20px;
     --text-title: 24px;
 }
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}

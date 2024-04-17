@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
-const useLogin = (): {isCookie:boolean, login: React.MouseEventHandler, logout: React.MouseEventHandler} => {
+interface UseLogin{
+    () : {isCookie: boolean, login: React.MouseEventHandler, logout: React.MouseEventHandler};
+}
+
+const useLogin: UseLogin = () => {
     const [isCookie, setIsCookie] = useState<boolean>(false);
 
-    const login: React.MouseEventHandler = () => {
+    const login = () => {
         document.cookie = "key=value";
         setIsCookie(true);
     }
 
-    const logout: React.MouseEventHandler = () => {
+    const logout = () => {
         document.cookie = "key=; Max-Age=-1; path=/;";
         setIsCookie(false);
     }
