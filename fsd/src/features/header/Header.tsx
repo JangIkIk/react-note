@@ -7,9 +7,9 @@ import RightPart from "./views/RightPart";
 const Header = ()=>{
     return(
         <div className="header">
-            <LeftPart/>
-            <CenterPart/>
-            <RightPart/>
+            <div className="header-left"><LeftPart/></div>
+            <div className="header-center"><CenterPart/></div>
+            <div className="header-right"><RightPart/></div>
         </div>
     );
 }

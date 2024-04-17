@@ -1,8 +1,9 @@
 .centerpart{
-    width: 50%;
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .centerpart-search{
@@ -49,3 +50,5 @@
 .centerpart-mic__img{
     filter: var(--mode-dark-invert);
 }
+
+
