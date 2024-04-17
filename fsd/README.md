@@ -20,13 +20,13 @@
 - 전역적으로 공유는 하지만 상태등이 관여하는 컴포넌트(ex: 유튜브의 viedo card 처럼) 
 
 ### hooks [Segments]
-- 특정 비즈니스 로직에 종속되지 않은 재사용 가능 hooks를 가지는 폴더
+- 특정 비즈니스 로직에 종속되지 않은 재사용 가능 hooks를 가지는 폴더 컴포넌트 및 기능?
 ### pages [Segments]
 - 각 페이지를 담당하는 폴더로서 segments만 존재한다
 ### states [Slices/Segments]
 - 상태관리 관련
 ### utils [Segments]
-- 컴포너트가 아닌 함수단위의 기능들
+- 컴포넌트가 아닌 단순 계산의 함수단위 기능들
 
 
 [조사]
