@@ -1,13 +1,27 @@
 import React from "react";
 import {Routes, Route,Outlet} from "react-router";
-import Home from "./pages/Home";
-import BaseLayout from "components/baseLayout/BaseLayout";
+import {Home} from "./pages/home/index";
+import {Login} from "./pages/login/index";
+import {BaseLayout, HeaderLayout} from "./widget/layout/index";
+import { LineCheck } from "@shared/ui/lineCheck/LineCheck";
 
-const Layout = ()=>{
+
+
+const HeaderAndAsideLayout = ()=>{
     return(
         <BaseLayout>
             <Outlet/>
+            <LineCheck/>
         </BaseLayout>
+    );
+}
+
+const HeaderAndLayout = ()=>{
+    return(
+        <HeaderLayout>
+            <Outlet/>
+            <LineCheck/>
+        </HeaderLayout>
     );
 }
 
@@ -24,8 +38,11 @@ const Router = ()=>{
     return(
         <>
             <Routes>
-                <Route element={<Layout/>}>
+                <Route element={<HeaderAndAsideLayout/>}>
                     <Route path="/" element={<Home/>}/>
+                </Route>
+                <Route element={<HeaderAndLayout/>}>
+                    <Route path="/login" element={<Login/>}/>
                 </Route>
             </Routes>
         </>

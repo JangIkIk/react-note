@@ -1,0 +1,48 @@
+:root{
+    --mode-dark-text: #ffffff;
+    --mode-dark-bg: #000000;
+    --mode-dark-effect: #303030;
+    --mode-dark-invert: invert(70%);
+
+    --text-sm: 12px;
+    --text-md: 16px;
+    --text-lg: 20px;
+    --text-title: 24px;
+
+    --pages: rgb(179, 179, 68);
+    --widget: #fa0ee9dd;
+    --feature: #14a200dd;
+    --entities: #2573e5dd;
+
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.pages{
+    outline: 1px solid red;
+}
+
+.widgets{
+    outline: 4px solid blue;
+}
+
+.features{
+    outline: 1px solid yellow;
+}
+
+.entities{
+    outline: 1px solid green;
+}
+
+.shared{
+    outline: 1px solid black;
+}
+
+
