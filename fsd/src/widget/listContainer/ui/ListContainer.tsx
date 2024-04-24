@@ -10,7 +10,7 @@ export const ListContainer = (props: {data: listDataType[]})=>{
     return(
         <div className="home-list" {...debugStyle}>
                 {data && data.map((value)=> {
-                    return <div className="home-list__item"><HomeList key={value.id} data={value}/></div>
+                    return <div className="home-list__item" key={value.id}><HomeList data={value}/></div>
                 })}
         </div>
     );

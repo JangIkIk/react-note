@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import lineSliceReducer from "./lineSlice";
+import sortSliceReducer from "@features/homeSortButton/model/selectSlice"
 
 export const store = configureStore({
     reducer: {
         line: lineSliceReducer,
+        sort: sortSliceReducer,
     },
 })
 

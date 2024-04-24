@@ -1,7 +1,7 @@
 import React from "react";
 import "./homeList.css";
 import {useDebug} from "@app/shared/hooks/useDebugStyle"
-import {listDataType} from "../hooks/useHomeListData";
+import {listDataType} from "../types";
 import {dateCalc} from "@shared/utility/timeCalc";
 import { useNavigate } from "react-router-dom";
 

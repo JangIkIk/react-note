@@ -1,21 +1,26 @@
 import React from "react";
 import "./home.css";
-import {SortButton} from "@shared/ui/sortButton/SortButton";
-import {mainBtnData} from "../model/data";
 import {useDebug} from "@app/shared/hooks/useDebugStyle";
-import {useHomeListData} from "@entities/homeList/index";
+import {useSortData} from "@features/homeSortButton/index";
 import {ListContainer} from "@widget/listContainer/index";
+import {HomeSortButton} from "@features/homeSortButton/index";
 
 export const Home = ()=>{
     const {debugStyle} = useDebug("pages/Home");
-    const listData = useHomeListData();
+    const listData = useSortData();
+    
     
     return(
         <div className="home" {...debugStyle}>
             <div className="home-sort">
-                {mainBtnData && mainBtnData.map( (value, idx) => <SortButton key={idx}>{value}</SortButton>)}
+                {/* 해당부문은 사실상 서버에서 버튼 메뉴를 받아야함
+                    임시처리방식 고민
+                */}
+                <HomeSortButton>전체</HomeSortButton>
+                <HomeSortButton>음악</HomeSortButton>
+                <HomeSortButton>만화</HomeSortButton>
             </div>
-            <ListContainer data={listData}/>
+            { listData && <ListContainer data={listData}/>}
         </div>
     );
 }
