@@ -1,17 +1,17 @@
 import React from "react";
 import "./aside.css";
-import IconBtn from "./views/IconBtn";
-import {useAppSelector} from "@app/hooks";
+import IconBtn from "./iconbtn/IconBtn";
 import {memberData,guestData} from "../model/data";
 import {useCheckUser} from "@shared/hooks/useCheckUser";
+import { useDebug } from "@app/shared/hooks/useDebugStyle";
 
 
 export const Aside = ()=>{
     const authorization = useCheckUser();
-    const lineValue = useAppSelector( state => state.line.value);
+    const {debugStyle} = useDebug("widget/Aside")
 
     return(
-        <div className={`aside ${lineValue ? "aside-line" : ""}`}>
+        <div className="aside" {...debugStyle}>
             {authorization 
             ? (memberData && memberData.map((value,idx)=>{
                 return <IconBtn key={idx} data={value}/>

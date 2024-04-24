@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 import { HeaderSearch } from "@features/headerSearch/index";
 import {HeaderMemberIcons} from "@features/headerMemberIcons/index";
 import {useCheckUser} from "@shared/hooks/useCheckUser";
-import { useAppSelector } from "@app/hooks";
-import {Guest} from "./view/Guest";
+import {Guest} from "./guest/Guest";
+import {useDebug} from "@app/shared/hooks/useDebugStyle";
 import menu from "@image/menu.svg";
 import logo from "@image/yotubeLogo.png";
 
 export const Header = () => {
-  const lineValue = useAppSelector((state) => state.line.value);
-  const authorization = useCheckUser();
+  const authorization = useCheckUser();  
+  const {debugStyle} = useDebug("widget/header");
 
   return (
-    <div className={`header ${lineValue ? "header-line" : ""}`}>
+    <div className="header" {...debugStyle}>
       <div className="header-left">
         <div className="leftpart-menu">
           <img className="leftpart-menu__img" src={menu} alt="menu" />

@@ -1,14 +1,14 @@
 import React from "react";
 import "./logout.css";
-import { useAppSelector } from "@app/hooks";
 import {useLogout} from "../hooks/useLogout";
+import {useDebug} from "@app/shared/hooks/useDebugStyle";
 
 export const Logout = ()=>{
-    const lineValue = useAppSelector((state) => state.line.value);
+    const {debugStyle} = useDebug("features/logout");
     const logout = useLogout();
 
     return(
-        <div className={`logout ${lineValue ? "logout-line" : ""}`} onClick={()=>logout()}>
+        <div className="logout" {...debugStyle} onClick={()=>logout()}>
             로그아웃버튼
         </div>
     );

@@ -4,20 +4,6 @@
     position: relative;
 }
 
-.headerMore-line{
-    box-shadow: inset 0 0 0 3px var(--feature);
-}
-
-.headerMore-line::after{
-    position: absolute;
-    content: "features/headerMore";
-    font-size: var(--text-sm);
-    color: var(--mode-dark-text);
-    background-color: var(--feature);
-    top: 0;
-    left: -100px;
-}
-
 .headerMore__img{
     filter: var(--mode-dark-invert);
 }

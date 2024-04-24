@@ -1,2 +1,2 @@
-export {BaseLayout, } from "./ui/view/BaseLayout";
-export {HeaderLayout} from "./ui/view/HeaderLayout";
+export {BaseLayout, } from "./ui/baseLayout/BaseLayout";
+export {HeaderLayout} from "./ui/headerLayout/HeaderLayout";

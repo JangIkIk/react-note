@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./headerMore.css";
 import more from "@image/more.svg";
-import {useAppSelector} from "@app/hooks";
+import {useDebug} from "@app/shared/hooks/useDebugStyle";
 
 export const HeaderMore = ()=>{
-    const lineValue = useAppSelector( state => state.line.value);
     const [modal, setModal] = useState<boolean>(false);
+    const {debugStyle} = useDebug("features/headerMore")
 
     return(
         <>
-        <div className={`headerMore ${lineValue ? "headerMore-line" : ""}`} onClick={()=> setModal(!modal)}>
+        <div className="headerMore" {...debugStyle} onClick={()=> setModal(!modal)}>
             <img className="headerMore__img" src={more} alt="more"/>
         </div>
         {modal 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/headerLayout.css";
+import "./headerLayout.css";
 import {Header} from "../../../header/index";
 
 export const HeaderLayout = (props: {children: React.ReactNode})=>{

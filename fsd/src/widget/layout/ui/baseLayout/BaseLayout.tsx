@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/baseLayout.css";
+import "./baseLayout.css";
 import {Header} from "../../../header/index";
 import {Aside} from "../../../aside/index";
 

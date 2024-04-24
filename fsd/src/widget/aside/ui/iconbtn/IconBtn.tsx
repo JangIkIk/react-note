@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/iconbtn.css";
+import "./iconbtn.css";
 import { NavLink, Link } from "react-router-dom";
 
 interface IconBtnProps {

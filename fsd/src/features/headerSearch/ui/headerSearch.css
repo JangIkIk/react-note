@@ -1,26 +1,11 @@
 .headerSearch{
+    padding: 5px;
     display: flex;
     align-items: center;
     gap: 15px;
     padding-left: 32px;
     padding-right: 32px;
 }
-
-.headerSearch-line{
-    position: relative;
-    outline: 3px solid var(--feature);
-}
-
-.headerSearch-line::after{
-    position: absolute;
-    content: "features/headerSearch";
-    font-size: var(--text-sm);
-    color: var(--mode-dark-text);
-    background-color: var(--feature);
-    top: 0;
-    left: 0;
-}
-
 .headerSearch-search{
     flex-grow: 1;
     border-radius: 20px;

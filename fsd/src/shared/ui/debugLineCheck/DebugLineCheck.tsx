@@ -1,9 +1,9 @@
 import React from "react";
-import "./lineCheck.css";
+import "./debugLineCheck.css";
 import {useAppDispatch} from "@app/hooks";
 import { isLine } from "@app/lineSlice";
 
-export const LineCheck = ()=>{
+export const DebugLineCheck = ()=>{
     const dispatch = useAppDispatch();
 
 

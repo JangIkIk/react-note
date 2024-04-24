@@ -1,8 +1,14 @@
-.aside{
+.home{
     height: 100%;
     background-color: var(--mode-dark-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 5px;
+    padding: 10px;
 }
+
+.home-sort{
+    display: flex;
+    gap: 10px;
+    align-items: center;    
+}
+
+
+

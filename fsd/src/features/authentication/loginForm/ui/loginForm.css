@@ -6,18 +6,3 @@
     padding: 10px;
     background-color: white;
 }
-
-.LoginForm-line{
-    position: relative;
-    box-shadow: inset 0 0 0 3px var(--feature);
-}
-
-.LoginForm-line::after{
-    position: absolute;
-    content: "feature/LoginForm";
-    font-size: var(--text-sm);
-    color: var(--mode-dark-text);
-    background-color: var(--feature);
-    top: 0;
-    left: 0;
-}

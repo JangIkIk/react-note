@@ -2,8 +2,10 @@ import React from "react";
 import {Routes, Route,Outlet} from "react-router";
 import {Home} from "./pages/home/index";
 import {Login} from "./pages/login/index";
+import { Channel } from "./pages/channel/index";
 import {BaseLayout, HeaderLayout} from "./widget/layout/index";
-import { LineCheck } from "@shared/ui/lineCheck/LineCheck";
+import { DebugLineCheck } from "@app/shared/ui/debugLineCheck/DebugLineCheck";
+
 
 
 
@@ -11,7 +13,7 @@ const HeaderAndAsideLayout = ()=>{
     return(
         <BaseLayout>
             <Outlet/>
-            <LineCheck/>
+            <DebugLineCheck/>
         </BaseLayout>
     );
 }
@@ -20,7 +22,7 @@ const HeaderAndLayout = ()=>{
     return(
         <HeaderLayout>
             <Outlet/>
-            <LineCheck/>
+            <DebugLineCheck/>
         </HeaderLayout>
     );
 }
@@ -40,6 +42,7 @@ const Router = ()=>{
             <Routes>
                 <Route element={<HeaderAndAsideLayout/>}>
                     <Route path="/" element={<Home/>}/>
+                    <Route path="/Channel/*" element={<Channel/>}/>
                 </Route>
                 <Route element={<HeaderAndLayout/>}>
                     <Route path="/login" element={<Login/>}/>

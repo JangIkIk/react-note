@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/guest.css";
+import "./guest.css";
 import loginLogo from "@image/loginLogo.svg";
 import {HeaderMore} from "@features/headerMore/index";
 import {Link} from "react-router-dom";
