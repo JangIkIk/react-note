@@ -5,6 +5,8 @@ import {Login} from "./pages/login/index";
 import { Channel } from "./pages/channel/index";
 import {BaseLayout, HeaderLayout} from "./widget/layout/index";
 import { DebugLineCheck } from "@app/shared/ui/debugLineCheck/DebugLineCheck";
+import { NotFound } from "@shared/ui/notFound/NotFound";
+
 
 
 
@@ -42,7 +44,7 @@ const Router = ()=>{
             <Routes>
                 <Route element={<HeaderAndAsideLayout/>}>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/Channel/*" element={<Channel/>}/>
+                    <Route path="/Channel/:id" element={<Channel/>}/>
                 </Route>
                 <Route element={<HeaderAndLayout/>}>
                     <Route path="/login" element={<Login/>}/>

@@ -29,9 +29,11 @@
 }
 
 .homeList-channel{
-    width: 60px;
+    width: 36px;
     margin-right: 10px;
+    flex-shrink: 0;
 }
+
 .homeList-channel__img{
     width: 100%;
     border-radius: 50%;
