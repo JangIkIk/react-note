@@ -1,0 +1,9 @@
+.sort{
+    padding: 10px 12px;
+    background-color: rgba(255,255,255,0.1);
+    color: var(--mode-dark-text);
+    border: none;
+    border-radius: 10px;
+    font-size: var(--text-sm);
+    cursor: pointer;
+}

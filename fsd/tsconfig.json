@@ -23,12 +23,14 @@
     "baseUrl": "./src",
     "paths": {
         "@app/*": ["./*"],
+        "@state/*": ["./state/*"],
+        "@utility/*": ["./utility/*"],
         "@pages/*": ["./pages/*"],
-        "@widget/*": ["./widget/*"],
         "@features/*": ["./features/*"],
-        "@entities/*": ["./entities/*"],
-        "@shared/*": ["./shared/*"],
-        "@image/*": ["./shared/assets/images/*"]
+        "@components/*": ["./components/*"],
+        "@hooks/*": ["./hooks/*"],
+        "@images/*": ["./assets/images/*"],
+        "@videos/*": ["./assets/videos/*"]
     }
   },
   "include": ["src"]

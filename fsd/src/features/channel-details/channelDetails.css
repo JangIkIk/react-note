@@ -1,0 +1,43 @@
+.channelDetails{
+    width: 90%;
+    color: var(--mode-dark-text-sub);
+}
+
+.channelDetails-banner{
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    height: 150px;
+}
+
+.channelDetails-info{
+    display: flex;
+    padding: 20px 0px;
+    gap: 20px;
+}
+
+.channelDetails-info-profile{
+    width: 130px;
+}
+
+.channelDetails-info-profile__img{
+    width: 100%;
+    border-radius: 50%;
+}
+.channelDetails-info-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.channelDetails-info-content__title{
+    font-size: var(--text-title);
+    font-weight: bold;
+    color: var(--mode-dark-text);
+}
+
+
+.channelDetails-info-content__text{
+    /*단위 추가해야하나?*/
+    font-size: 14px;
+}

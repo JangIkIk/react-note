@@ -1,0 +1,20 @@
+.headerMore{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.headerMore__img{
+    filter: var(--mode-dark-invert);
+}
+
+.headerMore__modal{
+    position: absolute;
+    color: var(--mode-dark-text);
+    right: 0px;
+    top: 57px;
+    background-color: #282828;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}

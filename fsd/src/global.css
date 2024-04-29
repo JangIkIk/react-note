@@ -1,0 +1,36 @@
+:root{
+    --mode-dark-text: #ffffff;
+    --mode-dark-text-sub: #808080;
+    --mode-dark-bg: #000000;
+    --mode-dark-effect: #303030;
+    --mode-dark-invert: invert(70%);
+
+    --text-sm: 12px;
+    --text-md: 16px;
+    --text-lg: 20px;
+    --text-title: 24px;
+}
+
+[data-fsd]{
+    position: relative;
+    box-shadow: inset 0 0 0 3px var(--fsd-background-color);
+}
+
+[data-fsd]::before{
+    position: absolute;
+    content: attr(data-fsd);
+    color: var(--mode-dark-text);
+    font-size: var(--text-sm);
+    top: 0;
+    left:0;
+    background-color: var(--fsd-background-color);
+    z-index: 99999;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}

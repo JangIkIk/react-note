@@ -3,13 +3,15 @@ const path = require('path');
 module.exports = {
     webpack: {
         alias:{
-            "@app": path.resolve(__dirname, "src/"), 
+            "@app": path.resolve(__dirname, "src/"),
+            "@state": path.resolve(__dirname, "src/state"),
+            "@utility": path.resolve(__dirname, "src/utility"),
             "@pages": path.resolve(__dirname, "src/pages"), 
-            '@widget': path.resolve(__dirname, 'src/widget'),
             '@features': path.resolve(__dirname, 'src/features'),
-            '@entities': path.resolve(__dirname, 'src/entities'),
-            '@shared': path.resolve(__dirname, 'src/shared'),
-            '@image': path.resolve(__dirname, 'src/shared/assets/image'),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@hooks': path.resolve(__dirname, 'src/hooks'),
+            '@images': path.resolve(__dirname, 'src/assets/images'),
+            '@videos': path.resolve(__dirname, 'src/assets/videos'),
         },
     },
 }

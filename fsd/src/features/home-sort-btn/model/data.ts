@@ -1,0 +1,1 @@
+export const categoryBtnData = ["전체","음악","유머","스포츠"]
