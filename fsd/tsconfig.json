@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "downlevelIteration": true,
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,8 +22,13 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-        "@image/*": ["./assets/images/*"],
-        "@hooks/*": ["./hooks/*"]
+        "@app/*": ["./*"],
+        "@pages/*": ["./pages/*"],
+        "@widget/*": ["./widget/*"],
+        "@features/*": ["./features/*"],
+        "@entities/*": ["./entities/*"],
+        "@shared/*": ["./shared/*"],
+        "@image/*": ["./shared/assets/images/*"]
     }
   },
   "include": ["src"]
