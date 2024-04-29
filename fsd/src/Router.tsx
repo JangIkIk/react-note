@@ -49,6 +49,7 @@ const Router = ()=>{
                 <Route element={<HeaderAndLayout/>}>
                     <Route path="/login" element={<Login/>}/>
                 </Route>
+                <Route path="/error" element={<NotFound/>}/>
             </Routes>
         </>
     );
