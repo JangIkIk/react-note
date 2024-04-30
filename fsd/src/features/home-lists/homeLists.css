@@ -1,0 +1,11 @@
+.home-lists{
+    display: flex;
+    padding-top: 20px;
+    gap: 10px;
+    margin: 0 10px 0 10px;
+}
+
+.home-lists__item{
+    flex: 1 0 250px;
+    margin-bottom: 15px;
+}

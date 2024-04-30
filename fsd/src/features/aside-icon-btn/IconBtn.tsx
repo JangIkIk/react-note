@@ -1,6 +1,6 @@
 import React from "react";
 import "./iconbtn.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface IconBtnProps {
     (props:{data: {file:string, text:string, router: string}}) : JSX.Element;

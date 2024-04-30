@@ -2,7 +2,7 @@ import React from "react";
 import {Routes, Route,Outlet} from "react-router";
 import { DefaultLayout } from "./components/defaultLayout/DefaultLayout";
 import { OnlyHeaderLayout } from "./components/onlyHeadrLayout/OnlyHeaderLayout";
-import { Home } from "./pages/home/Home";
+import { Home } from "./pages/Home";
 import { Channel } from "./pages/channel/Channel";
 import { LoginForm } from "@app/features/login/LoginForm";
 

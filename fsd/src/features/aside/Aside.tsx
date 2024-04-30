@@ -1,6 +1,6 @@
 import React from "react";
 import "./aside.css";
-import {IconBtn} from "./ui/icon-btn/IconBtn";
+import {IconBtn} from "../aside-icon-btn/IconBtn";
 import {memberData,guestData} from "./model/data";
 import {checkUser} from "@utility/checkUser";
 

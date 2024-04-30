@@ -1,4 +1,4 @@
-export const dateCalc = (date: string)=>{
+export const timeCalc = (date: string)=>{
     const currentDate = new Date();
     const listCreateDate = new Date(date);
 

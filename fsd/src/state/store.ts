@@ -1,12 +1,15 @@
 
 import { configureStore } from "@reduxjs/toolkit";
-import sortSliceReducer from "@features/home-sort-btn/model/slice"
+import HomeSortSlice from "./home-sort-slice";
+import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 export const store = configureStore({
     reducer: {
-        sort: sortSliceReducer,
+        HomeSortSlice: HomeSortSlice,
     },
 })
 
-export type AppDisPatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+type AppDisPatch = typeof store.dispatch;
+type RootState = ReturnType<typeof store.getState>;
+export const useAppDispatch = () => useDispatch<AppDisPatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

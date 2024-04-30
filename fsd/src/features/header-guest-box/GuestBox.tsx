@@ -1,7 +1,7 @@
 import React from "react";
 import "./guestBox.css";
 import loginLogo from "@images/loginLogo.svg";
-import { More } from "../more/More";
+import { More } from "../header-more/More";
 import {Link} from "react-router-dom";
 
 export const GuestBox = ()=>{

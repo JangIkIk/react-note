@@ -11,6 +11,10 @@
     --text-title: 24px;
 }
 
+body{
+    background-color: var(--mode-dark-bg);
+}
+
 [data-fsd]{
     position: relative;
     box-shadow: inset 0 0 0 3px var(--fsd-background-color);

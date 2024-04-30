@@ -1,11 +1,10 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { Search } from "./ui/search/Search";
-import {MemberBox} from "./ui/member-box/MemberBox";
+import { Search } from "../header-search/Search";
+import {MemberBox} from "../header-member-box/MemberBox";
 import { checkUser } from "@utility/checkUser";
-import { GuestBox } from "./ui/guest-box/GuestBox";
-
+import { GuestBox } from "../header-guest-box/GuestBox";
 import menu from "@images/menu.svg";
 import logo from "@images/yotubeLogo.png";
 
@@ -24,9 +23,11 @@ export const Header = () => {
           <span className="leftpart-logo__language">KR</span>
         </Link>
       </div>
+
       <div className="header-center">
         <Search />
       </div>
+      
       <div className="header-right">
         {authorization 
         ? <MemberBox/> 
