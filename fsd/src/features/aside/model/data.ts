@@ -8,55 +8,55 @@ import music from "@images/music.svg";
 
 export const memberData = [
     {
-        file: home,
-        text: "홈",
+        src: home,
+        name: "홈",
         router: "./",
     },
     {
-        file: shorts,
-        text: "shorts",
+        src: shorts,
+        name: "shorts",
         router: "./",
     },
     {
-        file: subscriptions,
-        text: "구독",
+        src: subscriptions,
+        name: "구독",
         router: "./",
     },
     {
-        file: my,
-        text: "나",
+        src: my,
+        name: "나",
         router: "./",
     },
     {
-        file: music,
-        text: "음악",
+        src: music,
+        name: "음악",
         router: "./",
     },
 ]
 export const guestData = [
     {
-        file: home,
-        text: "홈",
+        src: home,
+        name: "홈",
         router: "./",
     },
     {
-        file: shorts,
-        text: "shorts",
+        src: shorts,
+        name: "shorts",
         router: "./",
     },
     {
-        file: subscriptions,
-        text: "구독",
+        src: subscriptions,
+        name: "구독",
         router: "./",
     },
     {
-        file: my,
-        text: "나",
+        src: my,
+        name: "나",
         router: "./",
     },
     {
-        file: time,
-        text: "시청기록",
+        src: time,
+        name: "시청기록",
         router: "./",
     },
 ]

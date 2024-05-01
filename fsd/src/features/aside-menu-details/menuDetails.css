@@ -1,0 +1,12 @@
+.menu-details{
+    position: fixed;
+    background-color: var(--default-bg-color);
+    color: var(--default-text-color);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+
+

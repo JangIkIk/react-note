@@ -1,22 +1,15 @@
 import React from "react";
 import "./aside.css";
-import {IconBtn} from "../aside-icon-btn/IconBtn";
-import {memberData,guestData} from "./model/data";
-import {checkUser} from "@utility/checkUser";
+import { AsideCategory } from "./ui/asideCategory/AsideCategory";
+import { MenuDetails } from "../aside-menu-details/MenuDetails";
+import { useAppSelector } from "@app/state/store";
 
 
 export const Aside = ()=>{
-    const authorization = checkUser();
-
+    const selector = useAppSelector( state => state.HeaderMenuModalSlice.value);
     return(
-        <div className="aside">
-            {authorization 
-            ? (memberData && memberData.map((value,idx)=>{
-                return <IconBtn key={idx} data={value}/>
-            })) 
-            : (guestData && guestData.map((value,idx)=>{
-                return <IconBtn key={idx} data={value}/>
-            }))}
-        </div>
+        <>
+            {selector ? <MenuDetails/> : <AsideCategory/>}
+        </>
     );
 }

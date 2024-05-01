@@ -1,0 +1,31 @@
+.logo-box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-box__menu{
+    display: flex;
+    align-items: center;
+}
+
+.logo-box-logo{
+    display: flex;
+    gap: 3px;
+}
+
+.logo-box-logo__img{
+    width: 30px;
+}
+
+.logo-box-logo__title{
+    color: var(--default-text-color);
+    font-size: var(--text-xl);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.logo-box-logo__language{
+    color: #AAAAAA;
+    font-size: var(--text-sx);
+}

@@ -4,7 +4,7 @@ import {useGetChannelDetails} from "./hooks/useChannelDetails";
 import {ChannelModal} from "@features/channel-modal/ChannelModal";
 
 export const ChannelDetails = (props: {id?: string})=>{
-    console.log("ChannelDetails")
+
     const [detailData] = useGetChannelDetails(parseInt(props.id as string));
     
     return(

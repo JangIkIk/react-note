@@ -9,7 +9,7 @@
     align-items: center;
     gap: 10px;
     padding: 5px 10px;
-    border: 2px solid var(--mode-dark-effect);
+    border: 2px solid var(--default-border-color);
     border-radius: 20px;
     cursor: pointer;
 }
@@ -22,7 +22,7 @@
 }
 
 .guest-login-icon__img{
-    filter: var(--mode-dark-invert);
+    filter: var(--default-invert);
     width: 20px;
 }
 

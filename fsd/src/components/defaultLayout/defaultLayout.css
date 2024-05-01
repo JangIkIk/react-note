@@ -1,8 +1,7 @@
 .baseLayout{
     display: grid;
-    height: 100vh;
     grid-template-rows: 56px;
-    grid-template-columns: 72px;
+    grid-template-columns: 64px;
     grid-template-areas:
     "header header header"
     "aside main main"
@@ -12,19 +11,21 @@
 
 .baseLayout-header{
     position: fixed;
-    left: 0;
-    right: 0;
+    width: 100%;
     height: 56px;
+    top: 0;
+    padding: 0 19px;
     grid-area: header;
-    z-index: 99999;
+    z-index: 1;
 }
 
 .baseLayout-aside{
     position: fixed;
+    width: 64px;
     top: 56px;
-    width: 72px;
     bottom: 0;
     grid-area: aside;
+    z-index: 1;
 }
 
 .baseLayout-main{

@@ -1,18 +1,31 @@
 :root{
-    --mode-dark-text: #ffffff;
-    --mode-dark-text-sub: #808080;
-    --mode-dark-bg: #000000;
-    --mode-dark-effect: #303030;
-    --mode-dark-invert: invert(70%);
+    /* 다크모드설정 */
+    --dark-mode-text: #ffffff;
+    --dark-mode-sub-text: #808080;
+    --dark-mode-bg-color: #000000;
+    --dark-mode-sub-bg-color: #ffffff20;
+    --dark-invert: invert(70%);
+    --dark-mode-border-color: #303030;
 
-    --text-sm: 12px;
-    --text-md: 16px;
-    --text-lg: 20px;
+    /*사용할 설정*/
+    --default-text-color: var(--dark-mode-text);
+    --sub-text-color: var(--dark-mode-sub-text);
+    --default-bg-color: var(--dark-mode-bg-color);
+    --sub-bg-color: var(--dark-mode-sub-bg-color);
+    --default-invert: var(--dark-invert);
+    --default-border-color: var(--dark-mode-border-color);
+
+    /* 텍스트 사이즈 */
+    --text-sx: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
     --text-title: 24px;
 }
 
 body{
-    background-color: var(--mode-dark-bg);
+    background-color: var(--default-bg-color);
 }
 
 [data-fsd]{
@@ -23,7 +36,7 @@ body{
 [data-fsd]::before{
     position: absolute;
     content: attr(data-fsd);
-    color: var(--mode-dark-text);
+    color: var(--default-text-color);
     font-size: var(--text-sm);
     top: 0;
     left:0;
@@ -33,6 +46,10 @@ body{
 
 *{
     box-sizing: border-box;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 a{

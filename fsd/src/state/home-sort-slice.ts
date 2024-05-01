@@ -19,4 +19,4 @@ const HomeSortSlice = createSlice({
 });
 
 export const {changeSort} = HomeSortSlice.actions;
-export default HomeSortSlice.reducer
+export default HomeSortSlice.reducer;
