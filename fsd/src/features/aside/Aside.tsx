@@ -6,7 +6,7 @@ import { useAppSelector } from "@app/state/store";
 
 
 export const Aside = ()=>{
-    const selector = useAppSelector( state => state.HeaderMenuModalSlice.value);
+    const selector = useAppSelector( state => state.AsideMenuDetailsSlice.value);
     return(
         <>
             {selector ? <MenuDetails/> : <AsideCategory/>}

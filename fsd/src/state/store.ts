@@ -1,13 +1,15 @@
 
 import { configureStore } from "@reduxjs/toolkit";
-import HomeSortSlice from "./home-sort-slice";
-import HeaderMenuModalSlice from "./headerMenuModal-slice";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import AsideMenuDetailsSlice from "./aside-menu-details-slice";
+import HeaderMoreModalSlice from "./header-more-modal-slice";
+import HomeSortSlice from "./home-sort-slice";
 
 export const store = configureStore({
     reducer: {
         HomeSortSlice: HomeSortSlice,
-        HeaderMenuModalSlice: HeaderMenuModalSlice,
+        AsideMenuDetailsSlice: AsideMenuDetailsSlice,
+        HeaderMoreModalSlice: HeaderMoreModalSlice,
     },
 })
 

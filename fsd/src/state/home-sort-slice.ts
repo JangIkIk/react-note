@@ -1,22 +1,22 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface HomeSortState{
-    sortBy: string;
+    value: string;
 }
 
 const initialState: HomeSortState = {
-    sortBy: "전체",
+    value: "전체",
 }
 
 const HomeSortSlice = createSlice({
-    name: "home-sort-slice",
+    name: "HomeSortSlice",
     initialState,
     reducers:{
-        changeSort: (state, action: PayloadAction<string>) => {
-            state.sortBy = action.payload;
+        changeValue: (state, action: PayloadAction<string>) => {
+            state.value = action.payload;
         }
     }
 });
 
-export const {changeSort} = HomeSortSlice.actions;
+export const {changeValue} = HomeSortSlice.actions;
 export default HomeSortSlice.reducer;

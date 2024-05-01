@@ -1,0 +1,37 @@
+.guest-more{
+    display: flex;
+    position: relative;
+}
+
+.guest-more-modal{
+    position: absolute;
+    right: 0;
+    bottom: -340px;
+    width: 300px;
+    height: 330px;
+    background-color: #302e2e;
+    border-radius: 10px;
+    color: var(--default-text-color);
+
+    font-family:sans-serif;
+    padding: 10px 0;
+    
+}
+
+.guest-more-modal__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.guest-more-modal__button:hover{
+    background-color: var(--sub-bg-color);
+}
+
+.guest-more-modal__button__name{
+    flex-grow: 1;
+    font-size: var(--text-sm);
+}

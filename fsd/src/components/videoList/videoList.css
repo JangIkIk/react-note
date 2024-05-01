@@ -1,5 +1,5 @@
 .video-list{
-    color: var(--mode-dark-text);
+    color: var(--default-text-color);
 }
 
 .video-list-preview{
@@ -42,7 +42,7 @@
 
 .video-list-content{
     font-size: var(--text-sm);
-    color: var(--mode-dark-text-sub);
+    color: var(--sub-text-color);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -52,8 +52,7 @@
 
 .video-list-title{
     font-size: var(--text-md);
-    color: var(--mode-dark-text);
-    
+    color: var(--default-text-color);
     overflow: hidden;
     display: -webkit-box; 
     -webkit-line-clamp: 2;

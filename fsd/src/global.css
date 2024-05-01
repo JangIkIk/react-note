@@ -1,6 +1,6 @@
 :root{
     /* 다크모드설정 */
-    --dark-mode-text: #ffffff;
+    --dark-mode-text: #F1F1F1;;
     --dark-mode-sub-text: #808080;
     --dark-mode-bg-color: #000000;
     --dark-mode-sub-bg-color: #ffffff20;
