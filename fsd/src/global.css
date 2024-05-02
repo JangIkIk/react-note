@@ -3,6 +3,7 @@
     --dark-mode-text: #F1F1F1;;
     --dark-mode-sub-text: #808080;
     --dark-mode-bg-color: #000000;
+    --dark-mode-second-color: #302e2e;
     --dark-mode-sub-bg-color: #ffffff20;
     --dark-invert: invert(70%);
     --dark-mode-border-color: #303030;
@@ -11,6 +12,7 @@
     --default-text-color: var(--dark-mode-text);
     --sub-text-color: var(--dark-mode-sub-text);
     --default-bg-color: var(--dark-mode-bg-color);
+    --default2-bg-color: var(--dark-mode-second-color);
     --sub-bg-color: var(--dark-mode-sub-bg-color);
     --default-invert: var(--dark-invert);
     --default-border-color: var(--dark-mode-border-color);
@@ -28,28 +30,12 @@ body{
     background-color: var(--default-bg-color);
 }
 
-[data-fsd]{
-    position: relative;
-    box-shadow: inset 0 0 0 3px var(--fsd-background-color);
-}
-
-[data-fsd]::before{
-    position: absolute;
-    content: attr(data-fsd);
-    color: var(--default-text-color);
-    font-size: var(--text-sm);
-    top: 0;
-    left:0;
-    background-color: var(--fsd-background-color);
-    z-index: 99999;
-}
-
 *{
     box-sizing: border-box;
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none;
     ::-webkit-scrollbar{
         display: none;
-    }
+    } */
 }
 
 a{

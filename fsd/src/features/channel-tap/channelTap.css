@@ -1,0 +1,38 @@
+.channel-tap{
+    color: red;
+}
+
+.channel-tap-buttons{
+    display: flex;
+    gap: 15px;
+    color: var(--sub-text-color);
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.channel-tap-name{
+    position: relative;
+}
+
+.channel-tap-name__button{
+    text-align: center;
+    padding: 10px;
+    min-width: 48px;
+    cursor: pointer;
+    /* color: var(--default-text-color); */
+}
+
+.channel-tap-name__line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid white;
+    border-radius: 1px;
+}
+
+.channel-tap-line{
+    border-radius: 1px;
+    border-bottom: 1px solid gray;
+}

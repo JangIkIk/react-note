@@ -1,9 +1,0 @@
-.channel{
-    height: 100%;
-    background-color: var(--mode-dark-bg);
-    color: var(--mode-dark-text);
-    padding: 10px 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}

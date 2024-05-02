@@ -11,11 +11,11 @@ import { changeValue } from "@state/home-sort-slice";
     커스텀훅에서 생성한 리스트의 카테고리를 가져와 반환해주는 형태로 작성을하면 될것 같다.
 */
 export const SortBtns = ()=>{
-    const category = useGetSortList();
     const dispatch = useAppDispatch();
     const selector = useAppSelector( state => state.HomeSortSlice.value);
-
+    const category = useGetSortList();
     const clickSortBtn = (text: string) => dispatch(changeValue(text));
+
     return(
         <div className="sort-btns">
             {category && category.map( (value,idx) => {

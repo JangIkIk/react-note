@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { UseSortList } from "../types";
+import { useAppSelector } from "@app/state/store";
 // 임시데이터
 export const homeListsData = [
     {
@@ -50,15 +51,20 @@ export const homeListsData = [
 
 export const useGetList = ()=>{
     const [listData, setListData] = useState<UseSortList[]>([]);
+    const selector = useAppSelector( state => state.HomeSortSlice.value);
     
     useEffect(()=>{
+        // 필터 버튼 클릭시, 해당 상태에 담기 path를 통해 api요청
         fetch("")
         .then( res => {
-            
-            setListData(homeListsData)
+            if(selector !== "전체"){
+                const data = homeListsData.filter( value => value.category === selector);
+                return setListData(data);
+            }
+            setListData(homeListsData);
         })
         .catch( error => console.log(error))
-    },[])
+    },[selector])
 
 
     return listData;

@@ -8,7 +8,7 @@ import { changeValue } from "@state/header-more-modal-slice";
 
 
 /*
-    버튼별라인 수정필요함
+    수정필요(css)
 */
 
 export const MoreModal = ()=>{

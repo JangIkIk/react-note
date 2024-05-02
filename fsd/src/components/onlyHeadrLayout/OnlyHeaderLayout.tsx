@@ -1,14 +1,14 @@
 import React from "react";
 import "./onlyHeaderLayout.css";
 import {Header} from "@features/header/Header";
+import { Outlet } from "react-router-dom";
 
-export const OnlyHeaderLayout = (props: {children: React.ReactNode})=>{
-    const {children} = props;
+export const OnlyHeaderLayout = ()=>{
     return(
         <div className="headerLayout">
             <div className="headerLayout-header"><Header/></div>
             <div className="headerLayout-main">
-                {children}
+                <Outlet/>
             </div>
         </div>
     );

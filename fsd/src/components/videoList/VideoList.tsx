@@ -2,7 +2,8 @@ import React from "react";
 import "./videoList.css";
 import { VideoListProps } from "./type";
 import { timeCalc } from "@utility/timeCalc";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export const VideoList = (props: {data: VideoListProps }) => {
   const {
@@ -15,6 +16,8 @@ export const VideoList = (props: {data: VideoListProps }) => {
     view,
     creatDay,
   } = props.data;
+  const navigate = useNavigate();
+  const onClickPath = (userId: number) => navigate(`/channel/${userId}`);
 
   return (
     <div className="video-list">
@@ -24,10 +27,13 @@ export const VideoList = (props: {data: VideoListProps }) => {
       </div>
 
       <div className="video-list-info">
-        {channelImg && 
+        {/* {channelImg && 
         <Link to={`channel/${id}`} className="video-list-channel">
           <img className="video-list-channel__img" src={channelImg} alt="#" />
-        </Link>}
+        </Link>} */}
+        <div className="video-list-channel" onClick={()=>onClickPath(id)}>
+          <img className="video-list-channel__img" src={channelImg} alt="#" />
+        </div>
         <div className="video-list-content">
           <h3 className="video-list-title">{title}</h3>
           <div>

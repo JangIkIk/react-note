@@ -3,9 +3,8 @@ import "./channelDetails.css";
 import {useGetChannelDetails} from "./hooks/useChannelDetails";
 import {ChannelModal} from "@features/channel-modal/ChannelModal";
 
-export const ChannelDetails = (props: {id?: string})=>{
-
-    const [detailData] = useGetChannelDetails(parseInt(props.id as string));
+export const ChannelDetails = (props: {id: number})=>{
+    const [detailData] = useGetChannelDetails(props.id);
     
     return(
         <div className="channelDetails">

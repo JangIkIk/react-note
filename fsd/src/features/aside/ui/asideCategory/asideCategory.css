@@ -16,6 +16,9 @@
     padding: 10px;
     cursor: pointer;
 }
+.aside-category__button--active{
+    background-color: var(--sub-bg-color);
+}
 
 .aside-category__button:hover{
     background-color: var(--sub-bg-color);

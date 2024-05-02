@@ -74,3 +74,9 @@ features[slice-segments], pages[segments], hooks[segments], components[slice-seg
 6. pages의 css 제외할수 있도록 해본다
 7. features의 컴포넌트들에 css 수정이 필요하며, 파일의 네이밍이 명확한지 다시한번확인
 
+
+
+/*
+react-router-dom ex)
+https://easysimplejustpoint.tistory.com/5
+*/

@@ -25,12 +25,12 @@ export const menuBtnsData = [
             {
                 name: "Shorts",
                 src: shorts,
-                router: "/"
+                router: "shorts"
             },
             {
                 name: "구독",
                 src: subscriptions,
-                router: "/"
+                router: "subscriptions"
             },
         ]
     },
@@ -40,12 +40,12 @@ export const menuBtnsData = [
             {
                 name: "나",
                 src: my,
-                router: "/"
+                router: "my"
             },
             {
                 name: "시청기록",
                 src: time,
-                router: "/"
+                router: "time"
             }
         ]
     },
@@ -55,47 +55,47 @@ export const menuBtnsData = [
             {
                 name: "인기급상승",
                 src: hot,
-                router: "/"
+                router: "hot"
             },
             {
                 name: "쇼핑",
                 src: shopping,
-                router: "/"
+                router: "shopping"
             },
             {
                 name: "음악",
                 src: music,
-                router: "/"
+                router: "music"
             },
             {
                 name: "영화",
                 src: movie,
-                router: "/"
+                router: "movie"
             },
             {
                 name: "실시간",
                 src: live,
-                router: "/"
+                router: "live"
             },
             {
                 name: "게임",
                 src: game,
-                router: "/"
+                router: "game"
             },
             {
                 name: "스포츠",
                 src: sport,
-                router: "/"
+                router: "sport"
             },
             {
                 name: "학습프로그램",
                 src: light,
-                router: "/"
+                router: "light"
             },
             {
                 name: "팟캐스트",
                 src: podcast,
-                router: "/"
+                router: "podcast"
             },
         ]
     },

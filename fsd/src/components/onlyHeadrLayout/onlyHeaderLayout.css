@@ -12,11 +12,11 @@
 
 .headerLayout-header{
     position: fixed;
-    left: 0;
-    right: 0;
+    width: 100%;
     height: 56px;
+    top: 0;
     grid-area: header;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .headerLayout-main{

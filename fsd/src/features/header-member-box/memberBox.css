@@ -5,23 +5,8 @@
     position: relative;
 }
 
-
-.member-line{
-    box-shadow: inset 0 0 0 3px var(--feature);
-}
-
-.member-line::after{
-    position: absolute;
-    content: "features/HeaderMemberIcons";
-    font-size: var(--text-sm);
-    color: var(--mode-dark-text);
-    background-color: var(--feature);
-    top: 0;
-    left: -90px;
-}
-
 .member-icons{
-    filter: var(--mode-dark-invert);
+    filter: var(--default-invert);
     border-radius: 50%;
     padding: 2px;
     cursor: pointer;
@@ -29,7 +14,7 @@
 
 .member__modal{
     position: absolute;
-    color: var(--mode-dark-text);
+    color: var(--default-text-color);
     right: 0px;
     top: 57px;
     background-color: #282828;

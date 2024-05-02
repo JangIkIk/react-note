@@ -4,7 +4,7 @@
     color: var(--default-text-color);
     border: none;
     border-radius: 10px;
-    font-size: var(--text-sm);
+    font-size: var(--text-sx);
     cursor: pointer;
 }
 

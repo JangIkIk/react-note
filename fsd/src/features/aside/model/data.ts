@@ -10,53 +10,53 @@ export const memberData = [
     {
         src: home,
         name: "홈",
-        router: "./",
+        router: "/",
     },
     {
         src: shorts,
         name: "shorts",
-        router: "./",
+        router: "shorts",
     },
     {
         src: subscriptions,
         name: "구독",
-        router: "./",
+        router: "subscriptions",
     },
     {
         src: my,
         name: "나",
-        router: "./",
+        router: "my",
     },
     {
         src: music,
         name: "음악",
-        router: "./",
+        router: "music",
     },
 ]
 export const guestData = [
     {
         src: home,
         name: "홈",
-        router: "./",
+        router: "/",
     },
     {
         src: shorts,
         name: "shorts",
-        router: "./",
+        router: "login",
     },
     {
         src: subscriptions,
         name: "구독",
-        router: "./",
+        router: "subscriptions",
     },
     {
         src: my,
         name: "나",
-        router: "./",
+        router: "my",
     },
     {
         src: time,
         name: "시청기록",
-        router: "./",
+        router: "time",
     },
 ]
