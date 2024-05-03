@@ -1,4 +1,4 @@
-export const useLogout = () => {
+export const useDeleteLogout = () => {
 
     const handleLogout = () => {
         document.cookie = "key=; Max-Age=-1; path=/;";

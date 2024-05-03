@@ -1,9 +1,9 @@
 import React from "react";
 import "./logout.css";
-import {useLogout} from "./hooks/useLogout";
+import {useDeleteLogout} from "./hooks/useDeleteLogout";
 
 export const Logout = ()=>{
-    const logout = useLogout();
+    const logout = useDeleteLogout();
 
     return(
         <div className="logout" onClick={()=>logout()}>

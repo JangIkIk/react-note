@@ -1,4 +1,4 @@
-export const useLogin = () => {
+export const usePostLogin = () => {
     
     const handleLogin = () => {
         document.cookie = "key=value";

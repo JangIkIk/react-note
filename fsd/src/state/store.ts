@@ -5,6 +5,7 @@ import AsideMenuDetailsSlice from "./aside-menu-details-slice";
 import HeaderMoreModalSlice from "./header-more-modal-slice";
 import HomeSortSlice from "./home-sort-slice";
 import ChannelTapSlice from "./channel-tap-slice";
+import ChannelDetailsModalSlice from "./channel-details-modal-slice";
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         AsideMenuDetailsSlice: AsideMenuDetailsSlice,
         HeaderMoreModalSlice: HeaderMoreModalSlice,
         ChannelTapSlice: ChannelTapSlice,
+        ChannelDetailsModalSlice: ChannelDetailsModalSlice,
     },
 })
 

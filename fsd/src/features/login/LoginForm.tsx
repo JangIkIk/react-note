@@ -1,9 +1,9 @@
 import React from "react";
 import "./loginForm.css";
-import {useLogin} from "./hooks/useLogin";
+import {usePostLogin} from "./hooks/usePostLogin";
 
 export const LoginForm = ()=>{
-    const login = useLogin();
+    const login = usePostLogin();
 
 
     return(

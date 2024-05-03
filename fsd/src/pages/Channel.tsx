@@ -16,7 +16,6 @@ export const Channel = ()=>{
     return(
         <>
             <ChannelDetails id={id}/>
-            <ChannelTap id={id}/>
         </>
         
     );
