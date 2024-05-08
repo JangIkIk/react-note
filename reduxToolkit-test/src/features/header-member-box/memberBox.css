@@ -1,0 +1,24 @@
+.member{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.member-icons{
+    filter: var(--default-invert);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.member__modal{
+    position: absolute;
+    color: var(--default-text-color);
+    right: 0px;
+    top: 57px;
+    background-color: #282828;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}

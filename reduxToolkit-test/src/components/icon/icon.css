@@ -1,0 +1,5 @@
+.iconbtn-img{
+    width: 25px;
+    filter: var(--default-invert);
+    cursor: pointer;
+}

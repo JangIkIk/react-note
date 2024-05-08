@@ -1,0 +1,35 @@
+.guest{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.guest-login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: 2px solid var(--default-border-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.guest-login-icon{
+    display: flex;
+    border: 2px solid #3ea6ff;
+    border-radius: 50%;
+
+}
+
+.guest-login-icon__img{
+    filter: var(--default-invert);
+    width: 20px;
+}
+
+.guest-login__text{
+    color: #3ea6ff;
+    font-weight: 600;
+    font-size: var(--text-sm);
+}

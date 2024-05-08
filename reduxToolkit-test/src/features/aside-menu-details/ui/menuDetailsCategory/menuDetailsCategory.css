@@ -1,0 +1,29 @@
+.cartegory{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    padding: 12px 30px 12px 12px;
+    gap: 5px;
+    border-bottom: 2px solid var(--default-border-color);
+}
+
+.cartegory__button{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.cartegory__button--acive{
+    background-color: var(--sub-bg-color);
+}
+
+.cartegory__button:hover{
+    background-color: var(--sub-bg-color);
+}
+
+.cartegory__text{
+    font-size: var(--text-sm);
+}
