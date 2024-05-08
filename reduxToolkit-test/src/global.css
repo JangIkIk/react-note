@@ -1,0 +1,47 @@
+:root{
+    /* 다크모드설정 */
+    --dark-mode-text: #F1F1F1;;
+    --dark-mode-sub-text: #808080;
+    --dark-mode-bg-color: #000000;
+    --dark-mode-second-color: #302e2e;
+    --dark-mode-sub-bg-color: #ffffff20;
+    --dark-invert: invert(70%);
+    --dark-mode-border-color: #303030;
+
+    /*사용할 설정*/
+    --default-text-color: var(--dark-mode-text);
+    --sub-text-color: var(--dark-mode-sub-text);
+    --default-bg-color: var(--dark-mode-bg-color);
+    --default2-bg-color: var(--dark-mode-second-color);
+    --sub-bg-color: var(--dark-mode-sub-bg-color);
+    --default-invert: var(--dark-invert);
+    --default-border-color: var(--dark-mode-border-color);
+
+    /* 텍스트 사이즈 */
+    --text-sx: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-title: 24px;
+}
+
+#root{
+    height: 100%;
+}
+
+body{
+    background-color: var(--default-bg-color);
+}
+
+*{
+    box-sizing: border-box;
+    /* -ms-overflow-style: none;
+    ::-webkit-scrollbar{
+        display: none;
+    } */
+}
+
+a{
+    text-decoration: none;
+}
