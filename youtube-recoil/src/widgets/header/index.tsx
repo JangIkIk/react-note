@@ -4,6 +4,8 @@ import React from "react";
 import { Style } from "./styles/header";
 import { MenuButton } from "./ui/menuButton";
 import { Logo } from "./ui/logo";
+import { Search } from "./ui/search";
+import { GuestBox } from "./ui/guestBox";
 
 
 export const Header = () => {
@@ -13,8 +15,12 @@ export const Header = () => {
                 <MenuButton/>
                 <Logo/>
             </Style.start>
-            <Style.center></Style.center>
-            <Style.end></Style.end>
+            <Style.center>
+                <Search/>
+            </Style.center>
+            <Style.end>
+                <GuestBox/>
+            </Style.end>
         </Style.root>
     );
 }

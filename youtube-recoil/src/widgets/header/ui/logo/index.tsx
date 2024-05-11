@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "@images/yotubeLogo.png";
-import theme from "app/Theme";
 
 export const Logo = () => {
   return (
@@ -28,6 +27,7 @@ const Style_title = styled.span`
   font-size: ${({ theme }) => theme.fontSize.lg};
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 600;
+  letter-spacing: -1px;
 `;
 const Style_language = styled.span`
   color: ${({ theme }) => theme.fontColor_sub};

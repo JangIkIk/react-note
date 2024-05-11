@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const root = styled.div`
+const defaultLayout = styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: 56px;
@@ -10,7 +10,7 @@ const root = styled.div`
     "aside main main"
     "aside main main"
     "aside main main";
-  background-color: ${({theme})=> theme.background_main};
+  background-color: ${({ theme }) => theme.background_main};
 `;
 
 const header = styled.div`
@@ -32,12 +32,12 @@ const aside = styled.div`
 `;
 
 const main = styled.div`
-    grid-area: main;
-`
+  grid-area: main;
+`;
 
 export const Style = {
-    root,
-    header,
-    aside,
-    main,
-}
+  defaultLayout,
+  header,
+  aside,
+  main,
+};

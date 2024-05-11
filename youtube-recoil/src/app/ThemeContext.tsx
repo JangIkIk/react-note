@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { useChangeTheme } from "@shared/hooks/useChangeTheme";
+import { useChangeTheme } from "@shared/hooks/useChangeThemeAtom";
 import theme from "./Theme";
 
 

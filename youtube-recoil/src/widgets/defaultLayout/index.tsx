@@ -4,12 +4,12 @@ import { Header } from "@widgets/header";
 
 export const DefaultLayout = ()=>{
     return (
-        <Style.root> 
+        <Style.defaultLayout> 
             <Style.header>
                 <Header/>
             </Style.header>
             <Style.aside>메뉴</Style.aside>
             <Style.main>메인</Style.main>
-        </Style.root>
+        </Style.defaultLayout>
     );
 }
