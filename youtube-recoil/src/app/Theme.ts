@@ -18,7 +18,7 @@ const light = {
     fontColor_main: "black",
     fontColor_sub: "#gray",
     background_main: "white",
-    background_sub: "blue",
+    background_sub: "#d3d3d3",
 }
 
 

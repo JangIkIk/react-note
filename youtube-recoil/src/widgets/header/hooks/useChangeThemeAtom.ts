@@ -2,7 +2,11 @@ import {atom} from "recoil";
 import { useRecoilState } from "recoil";
 
 
-const initChangeTheme = atom<string>({
+/*
+        [recoil 수정]
+        타입정의 필요
+*/
+const initChangeTheme = atom<any>({
     key: "changeTheme",
     default: "dark",
 });

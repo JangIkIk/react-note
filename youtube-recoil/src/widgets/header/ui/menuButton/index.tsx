@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // layers
-import { useChangeTheme } from "@shared/hooks/useChangeThemeAtom";
+import { useChangeTheme } from "@widgets/header/hooks/useChangeThemeAtom";
 
 export const MenuButton = ()=>{
     const [mode] = useChangeTheme();

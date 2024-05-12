@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { useChangeTheme } from "@shared/hooks/useChangeThemeAtom";
+import { useChangeTheme } from "@widgets/header/hooks/useChangeThemeAtom";
 import theme from "./Theme";
 
 
