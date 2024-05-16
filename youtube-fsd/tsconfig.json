@@ -26,6 +26,7 @@
       "@pages/*": ["./2_pages/*"],
       "@widgets/*": ["./3_widgets/*"],
       "@features/*": ["./4_features/*"],
+      "@entities/*": ["./5_entities/*"],
       "@shared/*": ["./shared/*"],
       "@images/*": ["./shared/assets/images/*"],
     }

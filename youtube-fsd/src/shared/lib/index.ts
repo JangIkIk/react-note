@@ -1,2 +1,2 @@
 export {useUserStore} from "./useUserStore";
-export {timeCalc} from "./timeCalc";
+export {baseFetch} from "./baseFetch";

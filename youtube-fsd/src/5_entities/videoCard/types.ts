@@ -1,4 +1,3 @@
-
 export interface VideoListProps {
     id: number;
     previewImg: string;

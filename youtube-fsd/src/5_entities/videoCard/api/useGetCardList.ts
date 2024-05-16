@@ -1,5 +1,19 @@
-// 임시데이터
-export const listsData = [
+import React, { useEffect, useState } from "react";
+import {VideoListProps} from "../types"
+import {baseFetch} from "@shared/lib/index";
+
+export const useGetCardList = (urlPath: string | null)=>{
+    const [cardList, setCardList] = useState<VideoListProps[]>([]);
+
+    useEffect(()=>{
+        const dataFetch = async()=>{
+            try{
+                // 임시주석
+                // const successData = await baseFetch(`${urlPath}`);
+                // setCardList(successData);
+
+                // 임시데이터
+                const listsData = [
     {
         id: 1,
         previewImg: "https://i.ytimg.com/vi/6N_T5Q9BHS4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVch6ibxo6ac4Sz1KQcIXXU6AMrA",
@@ -9,7 +23,7 @@ export const listsData = [
         channelName: "쩌리뮤직 ᴊᴜsᴛʟɪsᴛᴇɴᴛᴏᴛʜᴇᴍᴜsɪᴄ",
         view: 230000,
         creatDay: "2014-04-14 09:00:00",
-        category: "음악"
+        category: "music"
     },
     {
         id: 2,
@@ -20,7 +34,7 @@ export const listsData = [
         channelName: "피식대학Psick Univ",
         view: 1220000,
         creatDay: "2014-04-14 09:00:00",
-        category: "유머"
+        category: "humor"
     },
     {
         id: 3,
@@ -31,7 +45,7 @@ export const listsData = [
         channelName: "에브리제이 EveryJ",
         view: 4000000,
         creatDay: "2014-04-14 09:00:00",
-        category: "음악"
+        category: "music"
     },
     {
         id: 4,
@@ -42,6 +56,23 @@ export const listsData = [
         channelName: "ClimbTourTV_클라임투어티비",
         view: 45000,
         creatDay: "2014-04-14 09:00:00",
-        category: "스포츠"
+        category: "sports"
     },
-]
+                ];
+                if(!urlPath){
+                    setCardList(listsData);
+                    return;
+                }                
+                const filterData = listsData.filter( value => value.category === urlPath);
+                setCardList(filterData);
+            }
+            catch(error){
+                console.log("error:",error);
+            }
+        };
+        dataFetch();
+    },[urlPath])
+
+
+    return cardList;
+}
