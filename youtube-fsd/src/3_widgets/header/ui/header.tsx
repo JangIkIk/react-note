@@ -16,6 +16,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const onClickHomeRoute = () => navigate("/");
   const onClickLoginRoute = () => navigate("/login");
+  console.log(isMember);
 
   return (
     <_.header>

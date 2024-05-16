@@ -4,7 +4,8 @@ import {baseFetch} from "@shared/lib/baseFetch";
 
 
 export const useGetCategory: ButtonsFunciton = ()=> {
-    const [buttons, setButtons] = useState<ButtonsState[]>([]);
+    const [categoryList, setCategoryList] = useState<ButtonsState[]>([]);
+    const [selectCategory, setSelectCategory] = useState<string>("");
 
     useEffect(()=>{
         const dataFetch = async()=>{
@@ -21,7 +22,7 @@ export const useGetCategory: ButtonsFunciton = ()=> {
                     {id:3,name:"유머",category: "humor"},
                     {id:4,name:"스포츠",category: "sports"},
                 ]
-                setButtons(ButtonsFetchData);
+                setCategoryList(ButtonsFetchData);
             }
             catch(error){
                 console.log("error:",error)
@@ -29,6 +30,6 @@ export const useGetCategory: ButtonsFunciton = ()=> {
         };
         dataFetch();
     },[])
-   return buttons;
+   return [selectCategory, setSelectCategory, categoryList]
 }
 

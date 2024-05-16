@@ -4,4 +4,4 @@ export type ButtonsState = {
     category: string;
 }
 
-export type ButtonsFunciton = () => ButtonsState[]
+export type ButtonsFunciton = () => [string, React.Dispatch<React.SetStateAction<string>>, ButtonsState[]]

@@ -2,21 +2,21 @@ import React from "react";
 import { _ } from "./likeCategoryListStyle";
 import type { ButtonsState } from "../types";
 
-export const LikeCategoryList = (props: {buttonList: ButtonsState[], currentCategory: string, selectCategory: React.Dispatch<React.SetStateAction<string>>}) => {
-  const {buttonList, currentCategory, selectCategory} = props;
+export const LikeCategoryList = (props: {categoryList: ButtonsState[], selectCategory: string, setSelectCategory: React.Dispatch<React.SetStateAction<string>>}) => {
+  const {selectCategory, setSelectCategory, categoryList, } = props;
   const onClickSetCategory = (category: string) => {
-    selectCategory(category);
+    setSelectCategory(category);
   };
 
   return (
       <>
-        {buttonList && buttonList.map((value)=>{
+        {categoryList && categoryList.map((item)=>{
           return(
             <_.item
-              key={value.id}
-              $active={ currentCategory === value.category}
-              onClick={()=>onClickSetCategory(value.category)}
-            >{value.name}</_.item>
+              key={item.id}
+              $active={ selectCategory === item.category}
+              onClick={()=>onClickSetCategory(item.category)}
+            >{item.name}</_.item>
           );
         })}
       </>
