@@ -7,10 +7,6 @@ import { useAppDispatch, useAppSelector } from "@app/state/store";
 import { changeValue } from "@state/header-more-modal-slice";
 
 
-/*
-    수정필요(css)
-*/
-
 export const MoreModal = ()=>{
     const textData = ["YouTube의 내 데이터", "디자인: 기기 테마", "언어: 한국어", "제한 모드: 사용안함", "위치: 한국", "단축키", "설정", "고객센터", "의견 보내기"];
     const selector = useAppSelector( state => state.HeaderMoreModalSlice.value);

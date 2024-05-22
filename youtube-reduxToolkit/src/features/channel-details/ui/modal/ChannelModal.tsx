@@ -5,11 +5,7 @@ import { changeValue } from "@state/channel-details-modal-slice";
 import { ChannelDetails } from "../../tpyes";
 
 
-{/* 
-수정필요(데이터바인딩)
-채널탭도 분리되어있는데 해당 Details 폴더 안에 존재하는게 맞나 ?
 
-*/}
 export const ChannelModal = (props: {data: ChannelDetails})=>{
     const { data: { channelLink, subscribe, videos, totalView, channelCreate, country } = {} } = props;
     const select = useAppSelector( state => state.ChannelDetailsModalSlice.value);
