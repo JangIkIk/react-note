@@ -1,0 +1,1 @@
+export type CONNECTOR = {title: string, link:string};

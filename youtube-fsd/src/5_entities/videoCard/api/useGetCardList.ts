@@ -15,7 +15,8 @@ export const useGetCardList = (urlPath: string | null)=>{
                 // 임시데이터
                 const listsData = [
     {
-        id: 1,
+        idx: 1,
+        accountName: "@sss-lx5un",
         previewImg: "https://i.ytimg.com/vi/6N_T5Q9BHS4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVch6ibxo6ac4Sz1KQcIXXU6AMrA",
         playTime: "2:58:55",
         channelImg: "https://yt3.ggpht.com/RjzsGfRc5vBFcVgPKN7yi4vDZGSUKL7pWE__oaK4ekF8Hk6a4696mI_ewK0a5DLmXdy3a1yj=s68-c-k-c0x00ffffff-no-rj",
@@ -26,7 +27,8 @@ export const useGetCardList = (urlPath: string | null)=>{
         category: "music"
     },
     {
-        id: 2,
+        idx: 2,
+        accountName: "@PsickUniv",
         previewImg: "https://i.ytimg.com/vi/1jnXKWV5iTk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDh55X4dmWx9YaZvuMgWOvX_zs_Eg",
         playTime: "30:57",
         channelImg: "https://yt3.ggpht.com/ytc/AIdro_meFLGNhZPE1Ck6GGQ1kAH_hhIg7axs5a1Kd_HIJ8d0_w=s68-c-k-c0x00ffffff-no-rj",
@@ -37,7 +39,8 @@ export const useGetCardList = (urlPath: string | null)=>{
         category: "humor"
     },
     {
-        id: 3,
+        idx: 3,
+        accountName: "@everyj",
         previewImg: "https://i.ytimg.com/vi/21WEmGX1qQw/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLD8GTrfNKfeO277va2Du2rlUsu-7A",
         playTime: "1:23:06",
         channelImg: "https://yt3.ggpht.com/oVlCgz2iHUwZQaFryJhVAAtuAPnJXPGwjDnzMSQGUNd9VZ09fKbEJM_pR63tlXPrukFYzI292g=s68-c-k-c0x00ffffff-no-rj",
@@ -48,7 +51,8 @@ export const useGetCardList = (urlPath: string | null)=>{
         category: "music"
     },
     {
-        id: 4,
+        idx: 4,
+        accountName: "@ClimbTourTV",
         previewImg: "https://i.ytimg.com/vi/-uKB4A1n8tE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB50womoTEzhGfbGXzFhpN_tpLnXw",
         playTime: "8:44",
         channelImg: "https://yt3.ggpht.com/ytc/AIdro_kF62QIMYdcw2S7ApJSulBJQHGA9EW1g6_mwKyRIcxPfbQ=s68-c-k-c0x00ffffff-no-rj",

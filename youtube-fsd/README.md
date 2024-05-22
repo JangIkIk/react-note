@@ -48,3 +48,20 @@
 
 
 https://www.youtube.com/watch?v=3s1jaFDrp5M&list=RD4ZWU67DaTAg&index=24&pp=8AUB
+
+[고민해보자]
+
+각 api를 커스텀훅을 사용하여 코드를 줄인다.
+error처리를 react-router-dom을 사용해서 효율적으로 볼수는 없나 ?
+
+
+1. aside부분에 consts 정의
+2. header 햄버거 메뉴 클릭시 aside 열림
+3. shorts 부분 ui
+4. 에러 바운더리 정의 (상태코드 예상)
+5. 없는 페이지 접근시 nopFound 컴포넌트
+6. 채널페이지 구독 버튼 features로 재정의
+7. 채널페이지 부분 렌더링 재확인
+8. fetch 커스텀훅 다시
+9. 
+

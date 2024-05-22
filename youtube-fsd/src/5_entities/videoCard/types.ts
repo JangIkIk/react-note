@@ -1,5 +1,6 @@
 export interface VideoListProps {
-    id: number;
+    idx: number;
+    accountName: string;
     previewImg: string;
     playTime: string;
     channelImg?: string;

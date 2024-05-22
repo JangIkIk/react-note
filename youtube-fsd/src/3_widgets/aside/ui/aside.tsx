@@ -16,13 +16,14 @@ export const Aside = ()=>{
     const location = useLocation();    
     const navigate = useNavigate();
     const onClickRoute = (path: string) => navigate(path);
+    console.log("A사이드 렌더링")
 
     return(
         <_.aside>
             {buttonData.map( (value,idx)=>{
                 return(
                     <_.category key={idx} $currentpath={location.pathname === value.router} onClick={() => onClickRoute(value.router)}>
-                        <svg xmlLang={value.src.xmlns} width={value.src.width} height={value.src.height} fill={value.src.fill} viewBox={value.src.viewBox}>
+                        <svg width={value.src.width} height={value.src.height} fill={value.src.fill} viewBox={value.src.viewBox}>
                             <path d={value.src.d}></path>
                         </svg>
                         <_.category_name>{value.name}</_.category_name>

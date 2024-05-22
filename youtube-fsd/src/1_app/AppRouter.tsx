@@ -1,44 +1,40 @@
 import React from "react";
-import { createBrowserRouter, createRoutesFromElements, Route, Link } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 
 import { DefaultLayout } from "./layout/defaultLayout";
 import { HeaderLayout } from "./layout/headerLayout";
 
 import { Home } from "@pages/home";
-import { Channel } from "@pages/channel";
+import { ChannelDetail } from "@pages/channelDetail/index";
 import { Login } from "@pages/login";
-import { Shorts } from "@pages/shorts";
-import { Subscriptions } from "@pages/subscriptions";
-import { MyPage } from "@pages/my";
-import { Music } from "@pages/music";
-import { TapContent } from "@pages/channel/ui/tap-content";
-import { TapHome } from "@pages/tap-home";
-import { TapVideo } from "@pages/tap-video";
-import { TapShorts } from "@pages/tap-shorts";
-import { TapPlayList } from "@pages/tap-playlist";
-import { TapCommunity } from "@pages/tap-community";
-import { route } from "@shared/consts/index";
+import { SignUp } from "@pages/signUp";
+import { Home as TapHome } from "@pages/channelDetail-home";
+import { Videos as TapVideos } from "@pages/channelDetail-videos";
+import { Shorts as TapShorts } from "@pages/channelDetail-shorts";
+import { PlayList as TapPlayList } from "@pages/channelDetail-playlist";
+import { Community as TapCommunity } from "@pages/channelDetail-community";
 
 export const AppRouter = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<DefaultLayout/>} errorElement={null}>
-      <Route path={`${route.HOME}`} element={<Home/>}/>
-      <Route path={`${route.CHANNEL}/:id`} element={<Channel/>}>
-        <Route element={<TapContent/>}>
-          <Route path="" element={<TapHome/>}/>
-          <Route path="video" element={<TapVideo/>}/>
-          <Route path="shorts" element={<TapShorts/>}/>
-          <Route path="playlist" element={<TapPlayList/>}/>
-          <Route path="community" element={<TapCommunity/>}/>
+    <>
+      <Route path="/" element={<DefaultLayout />} errorElement={null}>
+        <Route index element={<Home />} />
+        <Route path={"channel/:accountName"} element={<ChannelDetail />}>
+          <Route index element={<TapHome />} />
+          <Route path="videos" element={<TapVideos />} />
+          <Route path="shorts" element={<TapShorts />} />
+          <Route path="playlist" element={<TapPlayList />} />
+          <Route path="community" element={<TapCommunity />} />
         </Route>
       </Route>
-      <Route path={`${route.SHORTS}`} element={<Shorts/>}/>
-      <Route path={`${route.SUBSCRIBE}`} element={<Subscriptions/>}/>
-      <Route path={`${route.MYPAGE}`} element={<MyPage/>}/>
-      <Route path={`${route.MUSIC}`} element={<Music/>}/>
-      <Route path={`${route.LOGIN}`} element={<HeaderLayout/>} errorElement={null}>
-        <Route index element={<Login/>}/>
-      </Route>
-    </Route>
+      <Route path={"/"} element={<HeaderLayout />} errorElement={null}>
+        <Route path={"login"} element={<Login />} />
+        <Route path={"signup"} element={<SignUp />} />
+      </Route>    
+    </>
   )
-)
+);

@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { _ } from "./videoCardStyle";
 import type { VideoListProps } from "../types";
 import { timeCalc } from "../lib/timeCalc";
-import { route } from "@shared/consts/index";
 
 
 export const VideoCard = (props: {data: VideoListProps})=>{
     const {
-        id,
+        idx,
+        accountName,
         previewImg,
         playTime,
         channelImg,
@@ -18,7 +18,7 @@ export const VideoCard = (props: {data: VideoListProps})=>{
         creatDay,
       } = props.data;
     const navigate = useNavigate();
-    const onClickPath = (userId: number) => navigate(`/${route.CHANNEL}/${userId}`);
+    const onClickPath = (userId: string) => navigate(`channel/${userId}`);
     return(
         <_.videoCard>
             <_.preview>
@@ -27,7 +27,7 @@ export const VideoCard = (props: {data: VideoListProps})=>{
             </_.preview>
 
             <_.info>
-                <_.channel onClick={()=>onClickPath(id)}>
+                <_.channel onClick={()=>onClickPath(accountName)}>
                     <_.channelImg src={channelImg} alt={channelImg}/>
                 </_.channel>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { baseFetch } from "@shared/lib/baseFetch";
+import { baseFetch } from "@shared/lib";
 
 
 export const useLogin = async(userId: string , userPw: string)=>{

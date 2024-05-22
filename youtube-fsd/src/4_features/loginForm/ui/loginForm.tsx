@@ -2,7 +2,8 @@ import React, {useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import { _ } from "./loginFormStyle";
 import {useLogin} from "../api/useLogin";
-import { useUserStore } from "@shared/lib/useUserStore";
+import { useUserStore } from "@shared/lib";
+import { InputDefault, ButtonDefault } from "@shared/ui";
 
 export const LoginForm = () => {
     const userId = useRef<HTMLInputElement>(null);
@@ -18,14 +19,31 @@ export const LoginForm = () => {
             updateUser("userId");
             navigate("/");
         }
-    
-    }
+    };
+
+    const onClickRoute = () => navigate("/signup");
 
     return(
-        <_.loginForm style={{color: "white"}}>
-            <input type="text" placeholder="아이디" ref={userId}/>
-            <input type="text" placeholder="비밀번호" ref={userPw}/>
-            <input type="button" value={"로그인하기"} onClick={onClicklogin}/>
+        <_.loginForm>
+            <_.title>로그인</_.title>
+
+            <_.inputContainer>
+                <InputDefault
+                    type="text"
+                    placeholder="아이디를 입력해주세요"
+                    ref={userId}
+                />
+                <InputDefault
+                    type="text"
+                    placeholder="비밀번호를 입력해주세요"
+                    ref={userPw}
+                />
+            </_.inputContainer>
+
+            <_.buttonsContainer>
+                <ButtonDefault text={"로그인하기"}/>
+                <ButtonDefault text={"회원가입"} onClick={onClickRoute}/>
+            </_.buttonsContainer>
         </_.loginForm>
     );
 }

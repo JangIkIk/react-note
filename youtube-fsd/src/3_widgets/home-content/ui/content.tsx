@@ -21,7 +21,7 @@ export const Content = () => {
       <_.listContainer>
         {cardListFetchData && cardListFetchData.map((value)=>{
             return(
-                <_.item key={value.id}>
+                <_.item key={value.idx}>
                     <VideoCard data={value}/>
                 </_.item>
             );
