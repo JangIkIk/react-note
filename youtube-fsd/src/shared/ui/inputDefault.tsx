@@ -12,7 +12,7 @@ export const InputDefault = forwardRef<HTMLInputElement, InputDefaultProps>((pro
 const inputDefault = styled.input`
     padding: 6px;
     height: 40px;
-    border: none;
+    border: 1px solid ${({theme}) => theme.highlight};
     border-radius: 10px;
     width: 100%;
 `;

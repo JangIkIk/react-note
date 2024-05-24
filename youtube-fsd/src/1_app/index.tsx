@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { RouterProvider } from "react-router-dom";
+import { CookiesProvider } from "react-cookie";
 
 import theme from "./theme";
 import { AppRouter } from "./AppRouter";
@@ -16,9 +17,12 @@ export const App = ()=>{
     };
 
     return(
-            <ThemeProvider theme={style}>
-                <GlobalStyle/>
-                <RouterProvider router={AppRouter}/>
-            </ThemeProvider>
+            // <CookiesProvider>
+            // 이게 정확히 무슨용도냐
+                <ThemeProvider theme={style}>
+                    <GlobalStyle/>
+                    <RouterProvider router={AppRouter}/>
+                </ThemeProvider>
+            // </CookiesProvider>
         );
 }

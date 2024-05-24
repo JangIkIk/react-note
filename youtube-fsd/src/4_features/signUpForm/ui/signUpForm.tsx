@@ -1,42 +1,19 @@
 import React from "react";
-import { _ } from "./signUpFormStyle";
-import { InputDefault, ButtonDefault} from "@shared/ui";
 import { useForm } from "react-hook-form";
+import { _ } from "./signUpFormStyle";
+import type { SignUpValue } from "../types";
+import { useSignUp } from "../api/useSignUp";
+import { InputDefault, ButtonDefault} from "@shared/ui";
+import { IDREGEX, PWREGEX, NAMEREGEX} from "@shared/consts";
+
 
 /*
-  # useForm
-
-  ##register: 입력 또는 선택 요소를 등록하고, 유혀성 검사 규칙을 적용
-  - 구성: register(name. RegisterOptions)
-  [RegisterOptions]
-  1. ref(반응요소 참조) = {...register("test")} 
-  2. required(빈값체크) = boolean
-  3. maxLength(최대길이지정) = number
-  4. minLength(최소길이지정) = number
-  5. pattern(RegExp) = 정규표현식
-  6. validate(유효성검사 함수) = function
-
-  ## watch: 지정된 입력을 감시하고 해당 값을 반환, 입력 값을 렌더링하고, 조건별로 무엇을 렌더링할지에 사용
-
-  ## formState: 전체 양식 상태에 대한 정보가 포함되어 있음, 사용자의 상호작용을 추적하는데 도움
-  ## getValues: 양식값을 읽는데 최적화된 도우미, watch와 차이점은 다시 렌더링을 트리거 하지 않거나, 입력 변경 사항을 구독하지 않는다는 것
-  ## mode: 전략을 설정하는것, 양식의 유효성을 언제 검사할지에 대한 방법인것같다.
-
-  201 
-  400
-  401
-  500
-
-  
+    [고민]
+    react-hook-form을 사용하기때문에 onClick부분에서 함수가 여러개 겹친다.
+    좀더 보기좋게 줄이거나 or useRef로 변경하는것을 고민해보자
 */
-
 export const SignUpForm = ()=>{
-    const IDREGEX = /^[a-zA-Z0-9_-]{1,20}$/;
-    const PWREGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,20}$/;
-    const NAMEREGEX = /^[a-zA-Z]{1,10}$/;
-    const url = process.env.REACT_APP_API_URL;
-    console.log(url)
-    const { register, formState:{errors}, watch, handleSubmit, setError} = useForm({
+    const { register, formState:{errors}, watch, handleSubmit} = useForm<SignUpValue>({
         mode: "onBlur",
         defaultValues: {
             id: "",
@@ -45,28 +22,12 @@ export const SignUpForm = ()=>{
             name: "",
         }
     });
-
-    const onSubmit = async (d: any, e:any)=> {
-        console.log("실행")
-        try{
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/channel`);
-            if(!response.ok){
-                throw new Error("에러")
-            }
-            const jsonData = await response.json();
-            console.log(jsonData);
-        }
-        catch(error){
-            
-            console.log("error:",error);
-        }
-    }
-    
-
+    const [signFetch] = useSignUp("channel");
+    const onSubmit = (data:SignUpValue)=> signFetch(data);
     
     return(
         <_.signUpForm>
-            <input 
+            <InputDefault 
             type="text" 
             placeholder="아이디" 
             {...register("id",{
@@ -77,33 +38,33 @@ export const SignUpForm = ()=>{
                 },
             })}
             />
-            {errors?.id ? <p style={{color: "white"}}>{errors.id.message}</p> : null}
+            {errors?.id ? <_.regexText>{errors.id.message}</_.regexText> : null}
 
-            <input 
+            <InputDefault 
             type="text" 
             placeholder="비밀번호" 
             {...register("pw",{
                 required: '비밀번호를 입력해주세요',
-                // pattern: {
-                //     value: PWREGEX,
-                //     message: "비밀번호 (8~20자), (소문자, 대문자, 특수문자, 숫자포함 )",
-                // },
+                pattern: {
+                    value: PWREGEX,
+                    message: "비밀번호 (8~20자), (소문자, 대문자, 특수문자, 숫자포함 )",
+                },
             })}
             />
-            {errors?.pw ? <p style={{color: "white"}}>{errors.pw.message}</p> : null}
+            {errors?.pw ? <_.regexText>{errors.pw.message}</_.regexText> : null}
 
-            <input 
+            <InputDefault 
             type="text" 
             placeholder="비밀번호 확인" 
             {...register("pwCheck",{
                 required: '비밀번호 확인을 입력해주세요',
-                // validate: (value)=>{
-                //    return  watch().pw !== value ? "비밀번호가 일치하지 않습니다" : true;
-                // },
+                validate: (value)=>{
+                   return  watch().pw !== value ? "비밀번호가 일치하지 않습니다" : true;
+                },
             })}/>
-            {errors?.pwCheck ? <p style={{color: "white"}}>{errors.pwCheck.message}</p> : null}
+            {errors?.pwCheck ? <_.regexText>{errors.pwCheck.message}</_.regexText> : null}
 
-            <input 
+            <InputDefault 
             type="text" 
             placeholder="이름" 
             {...register("name",{
@@ -113,9 +74,12 @@ export const SignUpForm = ()=>{
                     message: "이름 (1~10자)"
                 }
             })}/>
-            {errors?.name ? <p style={{color: "white"}}>{errors.name.message}</p> : null}
+            {errors?.name ? <_.regexText>{errors.name.message}</_.regexText> : null}
 
-            <button onClick={handleSubmit(onSubmit)}>회원가입</button>
+            <ButtonDefault 
+            text="회원가입"
+            onClick={handleSubmit(onSubmit)}
+            />
         </_.signUpForm>
     );
 }

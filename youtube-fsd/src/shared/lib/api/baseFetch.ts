@@ -10,6 +10,5 @@ export const baseFetch = async(urlPath: string)=>{
     }
     catch(error){
         return error;
-        // 여기서 모든에러를 처리?
     }
 }

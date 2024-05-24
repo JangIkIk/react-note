@@ -10,7 +10,11 @@ const signUpForm = styled.div`
     gap: 10px;
 `;
 
+const regexText = styled.p`
+    font-size: ${({theme})=> theme.fontSize.xs};
+    color: ${({theme}) => theme.highlight};
+`;
 export const _ = {
     signUpForm,
-
+    regexText
 };

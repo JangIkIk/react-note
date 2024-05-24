@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+
 type State = {
     user: null | string,
     mode: string,

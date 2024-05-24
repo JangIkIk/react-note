@@ -21,6 +21,8 @@ const buttonDefault = styled.button`
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
+    background-color: ${({theme}) => theme.auxiliary};
+    color: ${({theme}) => theme.highlight};
 `;
 
 const _ = {
