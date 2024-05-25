@@ -1,0 +1,1 @@
+export { MemberProfile } from "./ui/memberProfile";

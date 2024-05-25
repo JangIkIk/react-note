@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom"; 
 import { useCookies } from "react-cookie";
-import type { useLoginSignature, LoginFetchSignature } from "../types";
+// import type { useLogin, LoginFetch } from "../types";
+import type {UseLogin, LoginFetch} from "../types";
+import { useFetch } from "@shared/lib";
 
 /*
 [고민]
@@ -11,35 +13,37 @@ import type { useLoginSignature, LoginFetchSignature } from "../types";
 * error를 처리할때 어떤방법이 효율적일지?
 */
 
-export const useLogin:useLoginSignature = (url)=>{
-    const [errorStatus, setErrorStatus] = useState<number>(0);
+export const useLogin:UseLogin = ()=>{
     const [_, setCookie] = useCookies(['accessToken']);
+    const [baseFetch, errorStatus, fetchData] = useFetch();
     const navigate = useNavigate();
-
-    const loginFetch: LoginFetchSignature = async(data)=>{
+    const loginFetch: LoginFetch = async (data)=>{
+        // 현재비동기로 인해 버튼을 두번눌러야한다
+        // useFetch에서 데이터가 업데이트 되기전에 코드가 실행되어서 그럼
+        // useFetch에서 fetch Data를 쓰려면 useEffect가 있거나,
+        // 데이터 자체를 돌려줘야할듯함
+        // 
         try{
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/${url}`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
-            if(!response.ok){
-                setErrorStatus(response.status);
-                return;
-            }
-            
-            const jsonData = await response.json();
-            setCookie("accessToken", jsonData.accessToken);
-            navigate("/");
+            const token = await baseFetch("auth",{method: "POST", data});
+            console.log(token);
+
         }
-        catch(error){
-            if(error instanceof Error) console.log(error);
+        catch{
+
         }
-    }
+        
+        
+            // if(!errorStatus && fetchData){
+            //     // setCookie("accessToken", fetchData);
+            //     // navigate("/");
+            // };
+        
+        }
+
 
     useEffect(()=>{
+        
+
         if(errorStatus === 400){
             console.log("형식오류");
         }

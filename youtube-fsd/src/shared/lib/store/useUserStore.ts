@@ -18,6 +18,5 @@ export const useUserStore = create<State & Actions>((set) => ({
 
     updateUser: (userId) => set({user: userId}),
     deleteUser: () => set({user: null}),
-    
     updateMode: (style) => set({mode: style}),
 }))

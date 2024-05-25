@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import type {SignUpFetchSignature, UseSignUpSignature} from "../types"
+import type {SignUpFetch, UseSignUp} from "../types";
+import { useFetch } from "@shared/lib";
 
 /*
 [고민]
@@ -9,28 +10,15 @@ import type {SignUpFetchSignature, UseSignUpSignature} from "../types"
 3. useEffect에 처리되는 에러부분 상태에 맞게 처리
 * error를 처리할때 어떤방법이 효율적일지?
 */
-export const useSignUp:UseSignUpSignature = (url)=>{
-    const [errorStatus, setErrorStatus] = useState<number>(0);
-    const navigate = useNavigate();
 
-    const signFetch: SignUpFetchSignature = async ( data ) => {
-        try{
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/${url}`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
-            if(!response.ok){
-                setErrorStatus(response.status);
-                return;
-            }
-            navigate("/login");
-        }
-        catch(error){
-            if(error instanceof Error) console.log(error);
-        }
+export const useSignUp:UseSignUp = ()=>{
+    const navigate = useNavigate();
+    const [baseFetch, errorStatus] = useFetch();
+
+    const signUpFetch:SignUpFetch = ( data ) => {
+        console.log("값은 있음")
+            baseFetch("channel",{method:"POST",data});
+            if(!errorStatus) navigate("/login");
     }
 
     useEffect(()=>{
@@ -45,5 +33,5 @@ export const useSignUp:UseSignUpSignature = (url)=>{
         }
     },[errorStatus])
 
-    return [signFetch];
+    return [signUpFetch];
 }

@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useCookies } from "react-cookie";
 import { _ } from "./headerStyle";
-
 import logo from "@images/yotubeLogo.png";
-import { useUserStore } from "@shared/lib";
 import { Search } from "@features/search/index";
 import { GuestModal } from "@features/guestModal";
-import { MemberModal } from "@features/memberModal/index";
+import { MemberProfile } from "@features/memberProfile";
 
 export const Header = () => {
   const [guestModal, setGuestModal] = useState(false);
-  const [memberModal, setMemberModal] = useState(false);
-  const isMember = useUserStore((state) => state.user);
   const navigate = useNavigate();
   const onClickHomeRoute = () => navigate("/");
   const onClickLoginRoute = () => navigate("/login");
+  const [cookie] = useCookies(['accessToken']);
 
   return (
     <_.header>
@@ -40,48 +37,12 @@ export const Header = () => {
         <Search />
       </_.center>
       <_.end>
-        {isMember ? (
-          <_.member>
-            <_.memberIcons>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z" />
-              </svg>
-            </_.memberIcons>
-            <_.memberIcons>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
-              </svg>
-            </_.memberIcons>
-            <_.memberIcons onClick={()=>setMemberModal(!memberModal)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
-              >
-                <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
-              </svg>
-            </_.memberIcons>
-            {memberModal ? <MemberModal/> : ""}
-          </_.member>
-        ) : (
+        {cookie.accessToken 
+          ? <MemberProfile/>
+          : (
           <_.guest>
             <_.guestMore onClick={() => setGuestModal(!guestModal)}>
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
@@ -93,7 +54,6 @@ export const Header = () => {
             <_.guestLogin onClick={onClickLoginRoute}>
               <_.guestLoginIcon>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   height="24px"
                   viewBox="0 -960 960 960"
                   width="24px"

@@ -11,7 +11,7 @@ export type SignUpFormProps = {
     name: string;
 }
 
-export type UseSignUpSignature = (url: string)=> [(data: SignUpFormProps) => Promise<void>]
+export type SignUpFetch = (data: SignUpFormProps) => void;
+export type UseSignUp = ()=> [SignUpFetch];
 
-export type SignUpFetchSignature = (data: SignUpFormProps) => Promise<void>;
 

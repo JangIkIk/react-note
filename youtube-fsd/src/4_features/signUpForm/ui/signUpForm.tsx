@@ -6,7 +6,6 @@ import { useSignUp } from "../api/useSignUp";
 import { InputDefault, ButtonDefault} from "@shared/ui";
 import { IDREGEX, PWREGEX, NAMEREGEX} from "@shared/consts";
 
-
 /*
     [고민]
     react-hook-form을 사용하기때문에 onClick부분에서 함수가 여러개 겹친다.
@@ -22,9 +21,12 @@ export const SignUpForm = ()=>{
             name: "",
         }
     });
-    const [signFetch] = useSignUp("channel");
-    const onSubmit = (data:SignUpValue)=> signFetch(data);
-    
+    const [signUpFetch] = useSignUp();
+    const onSubmit = (data:SignUpValue)=> {
+        const {id, pw, name} = data;
+        signUpFetch({id,pw,name})
+    };
+
     return(
         <_.signUpForm>
             <InputDefault 

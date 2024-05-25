@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { _ } from "./loginFormStyle";
@@ -16,10 +16,11 @@ export const LoginForm = () => {
             pw: ""
         }
     })
+    const [loginFetch] = useLogin();
     const navigate = useNavigate();
     const onClickRoute = () => navigate("/signup");
-    const [loginFetch] = useLogin("auth");
     const onSubmit = (data:LoginVlaue) => loginFetch(data);
+
 
     return(
         <_.loginForm>
@@ -30,6 +31,7 @@ export const LoginForm = () => {
                     type="text"
                     placeholder="아이디를 입력해주세요"
                     {...register("id",{
+                        required: '아이디를 입력해주세요',
                         pattern: {
                             value: IDREGEX,
                             message: "아이디가 올바르지 않습니다" 
@@ -40,6 +42,7 @@ export const LoginForm = () => {
                     type="password"
                     placeholder="비밀번호를 입력해주세요"
                     {...register("pw",{
+                        required: '비밀번호를 입력해주세요',
                         pattern: {
                             value: PWREGEX,
                             message: "비밀번호가 올바르지 않습니다" 

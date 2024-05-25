@@ -3,5 +3,5 @@ export type LoginVlaue = {
     pw: string;
 }
 
-export type useLoginSignature = (url: string)=> [(data:LoginVlaue) => Promise<void>];
-export type LoginFetchSignature = (data: LoginVlaue) => Promise<void>;
+export type LoginFetch = (data: LoginVlaue) => void;
+export type UseLogin = ()=> [LoginFetch];
