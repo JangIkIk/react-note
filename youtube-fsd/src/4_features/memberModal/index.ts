@@ -1,1 +1,0 @@
-export { MemberModal} from "./ui/memberModal";

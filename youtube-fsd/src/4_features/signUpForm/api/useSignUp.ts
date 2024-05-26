@@ -13,14 +13,22 @@ import { useFetch } from "@shared/lib";
 
 export const useSignUp:UseSignUp = ()=>{
     const navigate = useNavigate();
-    const [baseFetch, errorStatus] = useFetch();
+    const [baseFetch] = useFetch();
+    const [errorStatus, setErrorStatus] = useState<number>(0);
 
-    const signUpFetch:SignUpFetch = ( data ) => {
-        console.log("값은 있음")
-            baseFetch("channel",{method:"POST",data});
-            if(!errorStatus) navigate("/login");
+    const signUpFetch:SignUpFetch = async ( data ) => {
+        try{
+            const response = await baseFetch("channel",{method:"POST",data});
+            if(!response.ok){
+                setErrorStatus(response.status);
+                return;
+            };
+            navigate("/login");
+        }
+        catch(error){
+            if(error instanceof Error) console.log(error);
+        }            
     }
-
     useEffect(()=>{
         if(errorStatus === 400){
             console.log("형식오류");

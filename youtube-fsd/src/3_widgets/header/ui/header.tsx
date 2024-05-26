@@ -12,7 +12,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const onClickHomeRoute = () => navigate("/");
   const onClickLoginRoute = () => navigate("/login");
-  const [cookie] = useCookies(['accessToken']);
+  const [cookie] = useCookies(["accessToken"]);
 
   return (
     <_.header>
@@ -37,16 +37,31 @@ export const Header = () => {
         <Search />
       </_.center>
       <_.end>
-        {cookie.accessToken 
-          ? <MemberProfile/>
-          : (
-          <_.guest>
-            <_.guestMore onClick={() => setGuestModal(!guestModal)}>
+        {/* 멤버 프로필에 계층구조 문제가있음
+          동영상업로드 모달 / 로그아웃,프로필수정,모드 모달 두개가 존재한다
+          즉, 헤더의 오른쪽 box는 3개의 features가 존재하는거다
+          header에서 라인을 잡아주고, 클릭시 다른 features를 열어재끼는게 좋을것 같다
+
+        */}
+        {cookie.accessToken ? (
+          <_.member>
+            {/* 비디오 업로드 라인 */}
+            <_.memberIcons>
               <svg
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
+                fill="#e8eaed"
               >
+                <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z" />
+              </svg>
+            </_.memberIcons>
+            <MemberProfile/>
+          </_.member>
+        ) : (
+          <_.guest>
+            <_.guestMore onClick={() => setGuestModal(!guestModal)}>
+              <svg height="24px" viewBox="0 -960 960 960" width="24px">
                 <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
               </svg>
               {guestModal ? <GuestModal /> : ""}

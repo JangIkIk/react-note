@@ -15,35 +15,26 @@ import { useFetch } from "@shared/lib";
 
 export const useLogin:UseLogin = ()=>{
     const [_, setCookie] = useCookies(['accessToken']);
-    const [baseFetch, errorStatus, fetchData] = useFetch();
+    const [baseFetch] = useFetch();
     const navigate = useNavigate();
+    const [errorStatus, setErrorStatus] = useState<number>(0);
     const loginFetch: LoginFetch = async (data)=>{
-        // 현재비동기로 인해 버튼을 두번눌러야한다
-        // useFetch에서 데이터가 업데이트 되기전에 코드가 실행되어서 그럼
-        // useFetch에서 fetch Data를 쓰려면 useEffect가 있거나,
-        // 데이터 자체를 돌려줘야할듯함
-        // 
-        try{
-            const token = await baseFetch("auth",{method: "POST", data});
-            console.log(token);
+            try{
+                const response = await baseFetch("auth",{method: "POST", data});
 
+                if(!response.ok){
+                    setErrorStatus(response.status);
+                    return;
+                }
+                const jsonData = await response.json();
+                setCookie("accessToken",jsonData.accessToken);
+                navigate("/");
+            }
+            catch(error){
+                if(error instanceof Error) console.log(error);
+            }
         }
-        catch{
-
-        }
-        
-        
-            // if(!errorStatus && fetchData){
-            //     // setCookie("accessToken", fetchData);
-            //     // navigate("/");
-            // };
-        
-        }
-
-
     useEffect(()=>{
-        
-
         if(errorStatus === 400){
             console.log("형식오류");
         }

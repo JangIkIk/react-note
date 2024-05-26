@@ -7,7 +7,6 @@ import { useLogin } from "../api/useLogin";
 import { InputDefault, ButtonDefault } from "@shared/ui";
 import { IDREGEX , PWREGEX} from "@shared/consts";
 
-
 export const LoginForm = () => {
     const {register, formState: {errors}, handleSubmit} = useForm<LoginVlaue>({
         mode: "onBlur",
@@ -20,7 +19,6 @@ export const LoginForm = () => {
     const navigate = useNavigate();
     const onClickRoute = () => navigate("/signup");
     const onSubmit = (data:LoginVlaue) => loginFetch(data);
-
 
     return(
         <_.loginForm>

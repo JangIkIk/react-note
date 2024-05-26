@@ -20,6 +20,7 @@ const header = styled.div`
   top: 0;
   grid-area: header;
   z-index: 1;
+  background-color: ${({theme}) => theme.major};
 `;
 
 const aside = styled.div`
@@ -28,7 +29,6 @@ const aside = styled.div`
   top: 56px;
   bottom: 0;
   grid-area: aside;
-  z-index: 1;
 `;
 
 const main = styled.div`

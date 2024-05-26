@@ -113,8 +113,9 @@ const memberIcons = styled.div`
     &:hover{
         background-color: gray;
     }
+`;
 
-`
+
 
 export const _ = {
     header,
