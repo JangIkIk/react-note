@@ -87,7 +87,7 @@ const line = styled.div`
 
 // features로 빼야함
 const subscribe = styled.button`
-  width: 50px;
+  width: 100px;
   border-radius: 20px;
   padding: 8px;
   border: none;

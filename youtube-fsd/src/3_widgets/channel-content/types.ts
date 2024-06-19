@@ -1,16 +1,16 @@
-import type { CONNECTOR } from "@shared/consts/index";
-
-export type Content = {
-    idx: number;
-    banner: string;
-    channelImg: string;
-    channelName: string;
-    channelLink: string;
-    channelCreate: string;
-    channelTap: CONNECTOR[];
-    accountName: string;
-    country: string;
-    subscribe: number;
-    videos: number;
-    totalView: number;
+type Channel = {
+    idx: number,
+    name: string,
+    description: string | null,
+    profileImg: string | null,
+    createdAt: string
 };
+
+type Subscribe = boolean;
+
+type ChannelDetailData = {
+    channel: Channel,
+    subscribe: Subscribe,
+}
+
+export type ChannelDetailInfo = ChannelDetailData | null;

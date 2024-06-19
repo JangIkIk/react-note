@@ -1,33 +1,32 @@
-import React, { useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom"; 
+import React from "react";
 import { _ } from "./contentStyle";
-import { useGetContent } from "../api/useGetContent";
+import { useGetChannelDetail } from "../api/useGetChannelDetail";
+import { Subscribe } from "@features/subscribe";
+import { useUserStore } from "@shared/lib";
 
 export const Content = ()=>{
-    const {accountName} = useParams();
-    const navigate = useNavigate();
-    const contentData = useGetContent(accountName ?? null);
-    const onClickNavigate = (link: string, idx:number)=> {navigate(link), setSelectTap(idx)};
-    const [selectTap, setSelectTap] = useState(0);
-    console.log("상부렌더링");
-    
+    const [channelDetailInfo] = useGetChannelDetail();
+    const member = useUserStore( state => state.member);
+
     return(
         <>
-            {contentData 
+            {channelDetailInfo 
             &&
             <_.content>
-                <_.banner $img={contentData.banner}/>
+                <_.banner $img={`${process.env.REACT_APP_API_URL}/${channelDetailInfo.channel.profileImg}`}/>
                 <_.info>
                     <_.profile>
-                        <_.profile__img src={contentData.channelImg} alt={contentData.channelImg}/>
+                        <_.profile__img src={`${process.env.REACT_APP_API_URL}/${channelDetailInfo.channel.profileImg}`} alt={`${channelDetailInfo.channel.profileImg}`}/>
                     </_.profile>
                     <_.container>
-                        <_.title>{contentData.channelName}</_.title>
-                        <_.accountContent>{`${contentData.accountName} ‧ 구독자${contentData.subscribe} ‧ 동영상${contentData.videos}`}</_.accountContent>
-                        <_.subscribe>구독</_.subscribe>
+                        <_.title>{channelDetailInfo.channel.name}</_.title>
+                        <_.accountContent>{`${channelDetailInfo.channel.createdAt}`}</_.accountContent>
+                        {member?.idx !== channelDetailInfo.channel.idx
+                        ?<Subscribe subscribe={channelDetailInfo.subscribe} channelidx={channelDetailInfo.channel.idx}/>
+                        : null }
                     </_.container>
                 </_.info>
-                <_.tap>
+                {/* <_.tap>
                 {contentData.channelTap.map((button, idx)=>{
                     return (
                         <_.tapItem key={idx} onClick={()=> onClickNavigate(button.link, idx)} $select={ selectTap === idx}>
@@ -35,7 +34,7 @@ export const Content = ()=>{
                         </_.tapItem>
                     );
                 })}
-                </_.tap>
+                </_.tap> */}
             </_.content> }
             <_.line></_.line>
         </>

@@ -18,12 +18,12 @@ export const useSignUp:UseSignUp = ()=>{
 
     const signUpFetch:SignUpFetch = async ( data ) => {
         try{
-            const response = await baseFetch("channel",{method:"POST",data});
-            if(!response.ok){
-                setErrorStatus(response.status);
-                return;
-            };
-            navigate("/login");
+            // const response = await baseFetch("channel",{method:"POST",data});
+            // if(!response.ok){
+            //     setErrorStatus(response.status);
+            //     return;
+            // };
+            // navigate("/login");
         }
         catch(error){
             if(error instanceof Error) console.log(error);

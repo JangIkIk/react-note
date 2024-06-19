@@ -1,1 +1,0 @@
-export { Shorts } from "./ui/shorts";

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const defaultLayout = styled.div`
-  height: 100%;
+  height: 100vh;
   display: grid;
   grid-template-rows: 56px;
   grid-template-columns: 64px;

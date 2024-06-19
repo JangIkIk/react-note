@@ -6,12 +6,15 @@ const videoCard = styled.div`
 
 const preview = styled.div`
     position: relative;
+    height: 200px;
 `;
 
 const previewImg = styled.img`
     width: 100%;
+    height: 100%;
     vertical-align: bottom;
     border-radius: 15px;
+    cursor: pointer;
 `;
 
 const previewTime = styled.span`
@@ -30,12 +33,14 @@ const info = styled.div`
     padding-top: 12px;
 `;
 const channel = styled.div`
-    width: 36px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
     flex-shrink: 0;
 `;
 const channelImg = styled.img`
     width: 100%;
+    height: 100%;
     border-radius: 50%;
     cursor: pointer;
 `;
@@ -57,9 +62,6 @@ const title = styled.h3`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 `;
-const createDay = styled.span`
-    content: "•";
-`;
 
 export const _ = {
     videoCard,
@@ -71,5 +73,4 @@ export const _ = {
     channelImg,
     content,
     title,
-    createDay,
 }

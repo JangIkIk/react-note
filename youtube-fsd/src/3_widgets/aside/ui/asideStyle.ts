@@ -20,11 +20,29 @@ const category = styled.div<{$currentpath: boolean}>`
 `;
 
 const category_name = styled.p`
-    font-size: ${({theme}) => theme.fontSize.xs}
+    font-size: ${({theme}) => theme.fontSize.xs};
 `
+
+const subscribeList = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  & > img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  & > span{
+    font-size: ${({theme}) => theme.fontSize.xs}
+  }
+`;
 
 export const _ = {
   aside,
   category,
   category_name,
+  subscribeList
 };

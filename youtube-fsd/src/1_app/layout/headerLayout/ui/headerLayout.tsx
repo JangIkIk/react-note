@@ -6,7 +6,6 @@ import { _ } from "./headerLayoutStyle";
 import { Header } from "@widgets/header";
 
 export const HeaderLayout = ()=>{
-    console.log("헤더레이아웃");
     return(
         <_.headerLayout>
             <_.header>

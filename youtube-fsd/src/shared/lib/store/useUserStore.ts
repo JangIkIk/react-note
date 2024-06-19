@@ -1,22 +1,37 @@
+import { subscribe } from "diagnostics_channel";
 import { create } from "zustand";
 
+type Member = {
+    idx: number,
+    name: string,
+    description: string | null,
+    profileImg: string | null,
+    createdAt: Date,
+}
 
 type State = {
-    user: null | string,
     mode: string,
+    member: Member | null,
+    subscribe: boolean,
 }
 
 type Actions = {
-    updateUser: (userid: string) => void;
-    deleteUser: () => void;
     updateMode: (style: string) => void;
+
+    isSubscribe: ()=> void;
+
+    setMember: (memberInfo: Member) => void;
+    removeMember: () => void;
 }
 
 export const useUserStore = create<State & Actions>((set) => ({
-    user: null,
     mode: "dark",
+    
+    subscribe: false,
+    isSubscribe: () => set((state)=> ({subscribe: !state.subscribe})),
+    updateMode: (style)=> set({mode: style}),
 
-    updateUser: (userId) => set({user: userId}),
-    deleteUser: () => set({user: null}),
-    updateMode: (style) => set({mode: style}),
+    member: null,
+    removeMember: () => set({member: null}),
+    setMember: (memberInfo) => set({member: memberInfo}),
 }))

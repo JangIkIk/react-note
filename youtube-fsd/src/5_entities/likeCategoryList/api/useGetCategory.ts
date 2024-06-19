@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import type {ButtonsState, ButtonsFunciton} from "../types";
-import {baseFetch} from "@shared/lib";
+
 
 
 export const useGetCategory: ButtonsFunciton = ()=> {

@@ -5,7 +5,7 @@ import { VideoCard, useGetCardList } from "@entities/videoCard";
 
 export const Content = () => {
   const [selectCategory, setSelectCategory, categoryList] = useGetCategory();
-  const cardListFetchData = useGetCardList(selectCategory);
+  const [cardList] = useGetCardList();
 
 
   return (
@@ -19,7 +19,7 @@ export const Content = () => {
       </_.buttonContainer>
 
       <_.listContainer>
-        {cardListFetchData && cardListFetchData.map((value)=>{
+        {cardList && cardList.map((value)=>{
             return(
                 <_.item key={value.idx}>
                     <VideoCard data={value}/>

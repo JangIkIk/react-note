@@ -1,1 +1,0 @@
-export { AsideDetail } from "./ui/asideDetail";

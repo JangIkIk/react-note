@@ -7,7 +7,6 @@ import {Header} from "@widgets/header/index";
 import { Aside } from "@widgets/aside/index";
 
 export const DefaultLayout = ()=>{
-    console.log("디폴트 레이아웃")
     return (
         <_.defaultLayout> 
             <_.header>

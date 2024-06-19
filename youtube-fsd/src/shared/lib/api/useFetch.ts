@@ -1,29 +1,70 @@
-import React, {useEffect, useState } from "react";
-import type {Options, ReturnArray} from "../types";
+import React, {useState } from "react";
+import type { Options, ReturnArray } from "../types";
 
-// [고민] 해당 방식으로 해봐야할듯 (시그니처)
-// type UseFetch = <T>(url: string, options: Options<T>, auth: string) => void;
+export const useFetch = <T>(): ReturnArray<T> => {
+  const [errorStatus, setErrorStatus] = useState<number>(0);
+  const [fetchData, setFetchData] = useState<T | null>(null);
 
-export const useFetch = <T> (): ReturnArray<T>=>{
-    
-    const baseFetch = async(url: string, options?: Options<T>, auth?: string)=>{
-            const {method = "GET", headers = "application/json", data} = options || {};
-            const editHeaders: HeadersInit = {
-                "Content-Type": headers, // or "application/formdata"
-                ...(auth && {"Authorization": `Bearer ${auth}`}),
-            };
-            const requestInfo: RequestInit = { 
-                method,
-                headers:{...editHeaders},
-                ...(data && {body: JSON.stringify(data)}),
-            };
-    
-            const response = fetch(`${process.env.REACT_APP_API_URL}/${url}`,{...requestInfo});
-            return response;
-    };
-    return [baseFetch];
-}
+  const baseFetch = async (
+    url: string,
+    options?: Options<T>,
+    auth?: string
+  ) => {
+    try {
+      const {
+        method = "GET",
+        headers = "application/json",
+        data,
+      } = options || {};
+      const editHeaders: HeadersInit = {
+        ...(headers ? { "Content-Type": headers } : {}),
+        ...(auth && { Authorization: `Bearer ${auth}` }),
+      };
+      const requestInfo: RequestInit = {
+        method,
+        headers: { ...editHeaders },
+        ...(data && {
+          body: data instanceof FormData ? data : JSON.stringify(data),
+        }),
+      };
 
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/${url}`, {
+        ...requestInfo,
+      });
+      if(!response.ok){
+        setErrorStatus(response.status);
+        return;
+      }
+
+      const jsonData:T = await response.json();
+      setFetchData(jsonData);
+
+      return response;
+    } catch (error) { 
+        if(error instanceof Error) return error;
+    }
+  };
+  return [baseFetch, fetchData, errorStatus];
+};
+// export const useFetch = <T> (): ReturnArray<T>=>{
+
+//     const baseFetch = async(url: string, options?: Options<T>, auth?: string)=>{
+//             const {method = "GET", headers = "application/json", data} = options || {};
+//             const editHeaders: HeadersInit = {
+//                 ...(headers ? {"Content-Type": headers} : {}),
+//                 ...(auth && {"Authorization": `Bearer ${auth}`}),
+//             };
+//             const requestInfo: RequestInit = {
+//                 method,
+//                 headers:{...editHeaders},
+//                 ...(data && { body: (data instanceof FormData) ? data : JSON.stringify(data) })
+//             };
+
+//             const response = fetch(`${process.env.REACT_APP_API_URL}/${url}`,{...requestInfo});
+//             return response;
+//     };
+//     return [baseFetch];
+// }
 
 // 기존
 // export const useFetch = <T> (): ReturnArray<T>=>{
@@ -37,14 +78,14 @@ export const useFetch = <T> (): ReturnArray<T>=>{
 //                 "Content-Type": headers, // or "application/formdata"
 //                 ...(auth && {"Authorization": `Bearer ${auth}`}),
 //             };
-//             const requestInfo: RequestInit = { 
+//             const requestInfo: RequestInit = {
 //                 method,
 //                 headers:{...editHeaders},
 //                 ...(data && {body: JSON.stringify(data)}),
 //             };
-    
+
 //             const response = await fetch(`${process.env.REACT_APP_API_URL}/${url}`,{...requestInfo});
-            
+
 //             if(!response.ok) {
 //                 // setErrorStatus(response.status)
 //                 return response.status;
@@ -55,7 +96,7 @@ export const useFetch = <T> (): ReturnArray<T>=>{
 //             // 로그인은 200으로 시도해야하고, 회원가입은 201로 시도해야하는 상황
 //             // 데이터가 있는데도 불구하고 로그인시에 201로 상태코드가 넘어옴
 //             if(response.status === 201){
-//                 const jsonData = await response.json();
+//                 const jsonData = await response.json(); //
 //                 setFetchData(jsonData);
 //                 // return jsonData;
 //             };

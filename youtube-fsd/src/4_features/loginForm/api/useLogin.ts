@@ -15,26 +15,18 @@ import { useFetch } from "@shared/lib";
 
 export const useLogin:UseLogin = ()=>{
     const [_, setCookie] = useCookies(['accessToken']);
-    const [baseFetch] = useFetch();
+    const [baseFetch, fetchData, errorStatus] = useFetch();
     const navigate = useNavigate();
-    const [errorStatus, setErrorStatus] = useState<number>(0);
-    const loginFetch: LoginFetch = async (data)=>{
-            try{
-                const response = await baseFetch("auth",{method: "POST", data});
 
-                if(!response.ok){
-                    setErrorStatus(response.status);
-                    return;
-                }
-                const jsonData = await response.json();
-                setCookie("accessToken",jsonData.accessToken);
-                navigate("/");
-            }
-            catch(error){
-                if(error instanceof Error) console.log(error);
-            }
+    const loginFetch: LoginFetch = (data)=>{
+            baseFetch("auth",{method: "POST", data});
         }
+
     useEffect(()=>{
+        if(fetchData){
+            navigate("/");
+        }
+
         if(errorStatus === 400){
             console.log("형식오류");
         }
@@ -44,7 +36,7 @@ export const useLogin:UseLogin = ()=>{
         if(errorStatus === 500){
             console.log("서버에러");
         }
-    },[errorStatus])
+    },[errorStatus,fetchData])
     
     return [loginFetch]
 }

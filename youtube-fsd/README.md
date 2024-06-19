@@ -66,6 +66,76 @@ error처리를 react-router-dom을 사용해서 효율적으로 볼수는 없나
 9. 
 
 
+[진행상황]
+- 로그인
+- 회원가입
+- 내정보 가져오기
+- 프로필이미지 수정하기
+- 비디오 목록보기
+- 비디오 자세히 보기
+- 구독하기
+- 구독하기(비디오 자세히보기, 채널 상세보기) 
+- 구독 취소하기(비디오 자세히보기, 채널 상세보기)
+- 채널 상세보기
+- 비디오 생성하기
+- 자신의 비디오 자세히보기 금지
+- 내 구독목록 자져오기
+
+페이지 접근제한
+한번더 검사
+css 전체화면 비율 다시조정
+useState로 렌더링하는 부분 물어보기
 
 
 
+
+
+export interface VideoListProps {
+    idx: number;
+    accountName: string;
+    previewImg: string;
+    playTime: string;
+    channelImg?: string;
+    channelName: string;
+    title: string;
+    view: number;
+    creatDay: string;
+}
+
+export type ServerResponse = {
+    serverIdx: number;
+    serverChannelIdx: number;
+    serverTitle: string;
+    serverDescription: string;
+    serverThumbnailUrl: string;
+    serverCreatedAt: string;
+}
+
+export class VideoCard {
+    idx: number;
+    channelIdx: number;
+    title: string;
+    content: string;
+    thumbnailImg: string;
+    createdAt: Date;
+
+    constructor(idx: number, channelIdx:number, title:string, content:string, thumbnailImg:string, createdAt:Date){
+        this.idx = idx;
+        this.channelIdx = channelIdx;
+        this.title = title;
+        this.content = content;
+        this.thumbnailImg = thumbnailImg;
+        this.createdAt = createdAt;
+    }
+
+    static mapper(serverResponse: ServerResponse): VideoCard {
+        return {
+            idx: serverResponse.serverIdx,
+            channelIdx: serverResponse.serverChannelIdx,
+            title: serverResponse.serverTitle,
+            content: serverResponse.serverDescription,
+            thumbnailImg: serverResponse.serverThumbnailUrl,
+            createdAt: new Date(serverResponse.serverCreatedAt)
+        };
+    }
+}
